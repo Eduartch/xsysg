@@ -1,0 +1,16 @@
+[{
+	    "tipoconexion": "R",
+		"Controlcontometros": "N",
+		"Diasenviocpe": "2",
+		"Seriealterna": "1",
+		"ImprimirFacturaNormal": "",
+		"logotipo": "LogoGrifoz.png",
+		"fondo": "Fondo_Celeste.jpg",
+		"urlsunat": "https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService",
+		"Url": "https://compania-sysven.com/consulta",
+		"ConectaControlador": "N",
+		"Grabarxmlbd": "S",
+		"Codigopromocion": "",
+                "rutacertificado":"CertificadoYsabella",
+		"Controloferta": ""
+	}]

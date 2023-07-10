@@ -1,0 +1,8 @@
+server
+data
+user
+pwd
+ysabella
+
+
+

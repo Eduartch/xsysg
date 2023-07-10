@@ -1,0 +1,14 @@
+[ {
+		"tipoconexion": "R",
+		"logotipo": "logogrifo.png",
+		"Controlcontometros": "N",
+		"Diasenviocpe": "2",
+		"Seriealterna": "1",
+		"fondo": "450_1000.jpg",
+		"ConectaControlador": "",
+		"barrak": "barrakgrifoilucanjvr",
+		"Rutacertificado": "GrifoJaenAVR",
+		"Impresoranormal": "",
+		"barravtas": "barravtasgrifioilucanjvr"
+	}
+]

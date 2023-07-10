@@ -1,0 +1,1 @@
+schtasks /create /sc once /tn backup /tr z:\xsysg\copia.exe /st 06:00 /f

@@ -1,0 +1,13 @@
+[ {
+    "tipoconexion": "L",
+    "Controlcontometros": "N",
+    "Diasenviocpe": "2",
+    "Seriealterna": "4",
+    "Firmaryenviarxml": "S",
+    "ImprimirFacturaNormal": "",
+    "Grabarxmlbd": "S",
+    "ose": "nubefact",
+    "Url": "https://compania-sysven.com/consulta",
+    "Impresoranormal": "",
+    "Cdatos": ""
+  }]

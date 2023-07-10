@@ -1,0 +1,18 @@
+[
+  {
+        "tipoconexion": "R",
+        "Controlcontometros": "N",
+        "Diasenviocpe": "2",
+        "Seriealterna": "1",
+        "ImprimirFacturaNormal": "",
+        "ConectaControlador": "",
+        "nroturnos": "3",
+        "Grabarxmlbd": "S",
+        "Codigopromocion": "",
+        "Controloferta": "",
+        "logotipo":"logogrifomediopunto.png",
+        "Rutacertificado": "cruzmedano",
+        "Url": "https://compania-sysven.com/",
+        "barraventas": ""
+    }
+]

@@ -1,0 +1,20 @@
+[
+  {
+        "tipoconexion": "R",
+        "Controlcontometros": "S",
+        "Diasenviocpe": "2",
+        "Seriealterna": "5",
+        "logotipo": "logomovigasd.png",
+        "fondo":"fondon12.jpg",
+        "ConectaControlador": "",
+        "nroturnos": "3",
+        "Grabarxmlbd": "S",
+        "solounaserie":"1",
+        "IdClienteGenerico": "1",
+        "Lectorcodigobarras": "S",
+        "Seriemarket": "4",
+        "Impresoranormal": "Microsoft XPS Document Writer",
+        "Rutacertificado": "movigas",
+        "Url": "https://compania-sysven.com/consulta"
+  }
+]

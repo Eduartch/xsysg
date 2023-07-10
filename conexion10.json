@@ -1,0 +1,21 @@
+[
+  {
+        "tipoconexion": "R",
+        "Controlcontometros": "",
+        "precioventaeditable":"S", 
+        "Diasenviocpe": "2",
+        "Seriealterna": "2",
+        "logotipo": "logomovigas.png",
+        "fondo":"fondon12.jpg",
+        "nroturnos": "3",
+        "empresavisible":"N",
+        "Grabarxmlbd": "S",
+        "IdClienteGenerico": "1",
+        "Lectorcodigobarras": "S",
+        "Impresoranormal": "Microsoft XPS Document Writer",
+        "Rutacertificado": "movigas",
+        "EmisorGuiasRemisionElectronica":"S",
+        "direcciones":"S",
+        "Url": "https://compania-sysven.com/consulta"
+  }
+]

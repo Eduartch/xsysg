@@ -1,0 +1,16 @@
+[ {
+		"Servidor": "SERVIDOR10",
+		"BD": "bdGrifo",
+		"tipoconexion": "L",
+		"Controlcontometros": "N",
+		"ose": "nubefact",
+		"Diasenviocpe": "2",
+		"Firmaryenviarxml": "S",
+		"logotipo": "logosipan.png",
+		"ImprimirFacturaNormal": "",
+		"Codigopromocion": "",
+		"Controloferta": "",
+		"Url": "https://compania-sysven.com/consulta",
+		"Grabarxmlbd": "S"
+	}
+]

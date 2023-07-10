@@ -1,0 +1,20 @@
+[
+  {
+        "tipoconexion": "R",
+        "precioventaeditable":"S", 
+        "Diasenviocpe": "2",
+        "serieoventas":"2",
+        "ImprimirFacturaNormal":"S",
+        "logotipo": "logomovigasd.png",
+        "fondo":"fondon12.jpg",
+        "nroturnos": "3",
+        "empresavisible":"N",
+        "Grabarxmlbd": "S",
+        "vtascondetraccion":"S",
+        "Impresoranormal": "Microsoft XPS Document Writer",
+        "Rutacertificado": "francks",
+        "direcciones":"S",
+        "EmisorGuiasRemisionElectronica":"S",
+        "Url": "https://compania-sysven.com/consulta"
+  }
+]

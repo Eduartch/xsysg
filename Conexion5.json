@@ -1,0 +1,18 @@
+[
+  {
+        "tipoconexion": "R",
+        "Controlcontometros": "S",
+        "Diasenviocpe": "2",
+        "Seriealterna": "5",
+        "logotipo": "",
+        "ConectaControlador": "",
+        "nroturnos": "3",
+        "Grabarxmlbd": "S",
+        "IdClienteGenerico": "1",
+        "Lectorcodigobarras": "S",
+        "Seriemarket": "4",
+        "Impresoranormal": "Microsoft XPS Document Writer",
+        "Rutacertificado": "mocupe",
+        "Url": "https://compania-sysven.com/consulta"
+  }
+]

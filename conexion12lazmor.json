@@ -1,0 +1,15 @@
+[
+ {
+        "tipoconexion": "L",
+        "Controlcontometros": "N",
+        "Diasenviocpe": "2",
+        "Seriealterna": "1",
+        "ImprimirFacturaNormal":"",
+        "ConectaControlador":"",
+        "nroturnos": "3",
+        "fondo":"fondon12.jpg",
+        "logotipo":"logolazmor.png",
+        "Grabarxmlbd": "S",
+        "Url": "https://compania-sysven.com/consulta"
+    }
+]

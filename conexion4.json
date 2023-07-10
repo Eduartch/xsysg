@@ -1,0 +1,16 @@
+[{
+	"tipoconexion": "R",
+	"Diasenviocpe": "2",
+	"Seriealterna": "1",
+	"Firmaryenviarxml": "S",
+	"ImprimirFacturaNormal": "",
+        "logotipo":"Logosipanr.png",
+	"ConectaControlador": "Y",
+	"nroturnos": "3",
+	"Grabarxmlbd": "S",
+	"Codigopromocion": "",
+        "impresoranormal":"Microsoft XPS Document Writer",
+	"Controloferta": "",
+	"Rutacertificado": "Grigo4AOlmos",
+	"Url": "https://companiasysven.com/consulta"
+}]
