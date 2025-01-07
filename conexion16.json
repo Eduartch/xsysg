@@ -1,14 +1,14 @@
 [
   {
 		"tipoconexion": "R",
-		"Controlcontometros": "N",
-		"ose": "nubefact",
+	        "ose": "nubefact",
 		"Diasenviocpe": "2",
 		"conectacontrolador":"Y",
 		"logotipo": "logosipan.png",
 		"Url": "https://compania-sysven.com/consulta",
 		"Grabarxmlbd": "S",
                 "idclientegenerico":"2",
-        "rutacertificado":"CertificadoGrifoSipan"  
-	}
+                "rutacertificado":"CertificadoGrifoSipan",
+                "EmisorGuiasRemisionElectronica":"S"
+  	}
 ]

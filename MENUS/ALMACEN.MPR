@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 10/21/20             ALMACEN.MPR              08:32:01  
+*       * 07/21/23             ALMACEN.MPR              15:22:42  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2020 Etch Sys                             
+*       * Copyright (C) 2023 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -128,18 +128,18 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _5w30iagpj OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wylyu OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _5w30iagpk OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wylyv OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _5w30iagpl OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wylyw OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-DEFINE PAD _5w30iagpm OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wylyx OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _5w30iagpj OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _5w30iagpk OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _5w30iagpl OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
-ON PAD _5w30iagpm OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
+ON PAD _6o30wylyu OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6o30wylyv OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _6o30wylyw OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _6o30wylyx OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "P\<roveedores" ;
@@ -182,7 +182,7 @@ DEFINE POPUP (a_menupops[6]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[6]) PROMPT "Calcular Stock" ;
 	PICTURE "..\graphics\anular.ico"
 ON SELECTION BAR 1 OF (a_menupops[6]) ;
-	DO _5w30iagpn ;
+	DO _6o30wylyy ;
 	IN LOCFILE("\XSYSG\MENUS\ALMACEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is ALMACEN?")
 
 ACTIVATE MENU (m.cMenuName) NOWAIT
@@ -195,7 +195,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _5W30IAGPN  ON SELECTION BAR 1 OF POPUP utilidades      
+*       * _6O30WYLYY  ON SELECTION BAR 1 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -206,7 +206,7 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _5w30iagpn
+PROCEDURE _6o30wylyy
 IF SQLEXEC(goapp.bdconn,"call calcularstock()")<1
    errorbd("No Se puede Conectar con la Base de Datos")
    RETURN

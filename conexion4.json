@@ -2,8 +2,6 @@
 	"tipoconexion": "R",
 	"Diasenviocpe": "2",
 	"Seriealterna": "1",
-	"Firmaryenviarxml": "S",
-	"ImprimirFacturaNormal": "",
         "logotipo":"Logosipanr.png",
 	"ConectaControlador": "Y",
 	"nroturnos": "3",
@@ -11,6 +9,7 @@
 	"Codigopromocion": "",
         "impresoranormal":"Microsoft XPS Document Writer",
 	"Controloferta": "",
-	"Rutacertificado": "Grigo4AOlmos",
-	"Url": "https://companiasysven.com/consulta"
+	"Rutacertificado": "Grifo4AOlmos",
+	"Url": "https://compania-sysven.com/consulta",
+        "enviocorreoapi":"S"
 }]

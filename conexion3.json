@@ -4,11 +4,10 @@
         "consucursales":"S",
         "Controlcontometros": "S",
         "Diasenviocpe": "2",
-        "Seriealterna": "1",
         "ConectaControlador": "",
         "nroturnos": "4",
         "Grabarxmlbd": "S",
-        "Lectorcodigobarras": "S",
+        "EmisorGuiasRemisionElectronica":"S",
         "Rutacertificado": "GrifoMallaritos",
         "Url": "https://compania-sysven.com/consulta"
     }

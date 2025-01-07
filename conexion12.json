@@ -1,16 +1,12 @@
 [
  {
-        "tipoconexion": "R",
-        "consucursales":"S",
-        "Controlcontometros": "S",
+        "tipoconexion": "L",
         "Diasenviocpe": "2",
-        "Seriealterna": "1",
-        "ConectaControlador": "",
-        "nroturnos": "4",
+        "nroturnos": "2",
         "Grabarxmlbd": "S",
-        "Lectorcodigobarras": "S",
-        "Rutacertificado": "GrifoMallaritos",
-        "Url": "https://compania-sysven.com/consulta",
-        "promopuntos":"S"
+        "fondo":"FondoC.jpg",
+        "empresavisible":"N",
+        "logotipo":"logopetrobrisas.png",
+        "Url": "https://compania-sysven.com/consulta"
     }
 ]

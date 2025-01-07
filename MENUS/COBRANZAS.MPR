@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 10/21/20            COBRANZAS.MPR             08:32:03  
+*       * 07/21/23            COBRANZAS.MPR             15:22:42  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2020 Etch Sys                             
+*       * Copyright (C) 2023 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -129,21 +129,21 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _5w30iaioh OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wymbm OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _5w30iaioi OF (m.cMenuName) PROMPT "Ventas" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wymbn OF (m.cMenuName) PROMPT "Ventas" COLOR SCHEME 3 ;
 	KEY ALT+V, ""
-DEFINE PAD _5w30iaioj OF (m.cMenuName) PROMPT "Caja" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wymbo OF (m.cMenuName) PROMPT "Caja" COLOR SCHEME 3 ;
 	KEY ALT+C, ""
-DEFINE PAD _5w30iaiok OF (m.cMenuName) PROMPT "Cobranzas" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wymbp OF (m.cMenuName) PROMPT "Cobranzas" COLOR SCHEME 3 ;
 	KEY ALT+C, ""
-DEFINE PAD _5w30iaiol OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wymbq OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-ON PAD _5w30iaioh OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _5w30iaioi OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _5w30iaioj OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
-ON PAD _5w30iaiok OF (m.cMenuName) ACTIVATE POPUP (a_menupops[4])
-ON PAD _5w30iaiol OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
+ON PAD _6o30wymbm OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6o30wymbn OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _6o30wymbo OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _6o30wymbp OF (m.cMenuName) ACTIVATE POPUP (a_menupops[4])
+ON PAD _6o30wymbq OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Numeración de Documentos"
@@ -168,7 +168,7 @@ DEFINE BAR 7 OF (a_menupops[2]) PROMPT "\-"
 DEFINE BAR 8 OF (a_menupops[2]) PROMPT "Notas de Crédito/Debito"
 ON SELECTION BAR 1 OF (a_menupops[2]) goapp.form("ka_ventas")
 ON SELECTION BAR 2 OF (a_menupops[2]) ;
-	DO _5w30iaiom ;
+	DO _6o30wymbr ;
 	IN LOCFILE("\XSYSG\MENUS\COBRANZAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is COBRANZAS?")
 ON SELECTION BAR 3 OF (a_menupops[2]) goapp.form("ka_guiasventas",0,"")
 ON SELECTION BAR 5 OF (a_menupops[2]) goapp.form("ka_ventascaja")
@@ -229,7 +229,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _5W30IAIOM  ON SELECTION BAR 2 OF POPUP ventas          
+*       * _6O30WYMBR  ON SELECTION BAR 2 OF POPUP ventas          
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -240,7 +240,7 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _5w30iaiom
+PROCEDURE _6o30wymbr
 Do Form v_verifica With "A"  To verdad
 If verdad
 	Do Form ka_lselecciona With 0,"V" To nids

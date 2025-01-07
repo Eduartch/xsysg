@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 10/05/21             COMPRAS.MPR              23:35:58  
+*       * 07/21/23             COMPRAS.MPR              15:22:42  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2021 Etch Sys                             
+*       * Copyright (C) 2023 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -130,21 +130,21 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _65t1ekycd OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wyma2 OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _65t1ekyce OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wyma3 OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _65t1ekycf OF (m.cMenuName) PROMPT "Ctas P\<or Pagar" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wyma4 OF (m.cMenuName) PROMPT "Ctas P\<or Pagar" COLOR SCHEME 3 ;
 	KEY ALT+O, ""
-DEFINE PAD _65t1ekycg OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wyma5 OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-DEFINE PAD _65t1ekych OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _6o30wyma6 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _65t1ekycd OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _65t1ekyce OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _65t1ekycf OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
-ON PAD _65t1ekycg OF (m.cMenuName) ACTIVATE POPUP (a_menupops[4])
-ON PAD _65t1ekych OF (m.cMenuName) ACTIVATE POPUP (a_menupops[8])
+ON PAD _6o30wyma2 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6o30wyma3 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _6o30wyma4 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _6o30wyma5 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[4])
+ON PAD _6o30wyma6 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[8])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Productos"
@@ -226,7 +226,7 @@ DEFINE BAR 2 OF (a_menupops[8]) PROMPT "\-"
 DEFINE BAR 3 OF (a_menupops[8]) PROMPT "Obtener Stock-Fecha Sistema"
 ON SELECTION BAR 1 OF (a_menupops[8]) do form ka_elimina
 ON SELECTION BAR 3 OF (a_menupops[8]) ;
-	DO _65t1ekyci ;
+	DO _6o30wyma7 ;
 	IN LOCFILE("\XSYSG\MENUS\COMPRAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is COMPRAS?")
 
 ACTIVATE MENU (m.cMenuName) NOWAIT
@@ -239,7 +239,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _65T1EKYCI  ON SELECTION BAR 3 OF POPUP utilidades      
+*       * _6O30WYMA7  ON SELECTION BAR 3 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -250,7 +250,7 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _65t1ekyci
+PROCEDURE _6o30wyma7
 IF SQLEXEC(goapp.bdconn,"call calcularstock()")<1
    errorbd("No Se puede Conectar con la Base de Datos")
    RETURN

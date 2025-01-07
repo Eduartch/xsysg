@@ -1,0 +1,13 @@
+[
+ {
+        "tipoconexion": "L",
+        "Diasenviocpe": "2",
+        "Seriealterna": "1",
+        "nroturnos": "4",
+        "Grabarxmlbd": "S",
+        "consucursales":"S",
+        "enviocorreoapi":"S",
+        "mostrarcpeadmin":"N",
+        "Url": "https://compania-sysven.com/consulta"
+    }
+]

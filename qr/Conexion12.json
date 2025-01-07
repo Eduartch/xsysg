@@ -1,0 +1,17 @@
+[
+  {
+        "tipoconexion": "L",
+        "Controlcontometros": "S",
+        "Diasenviocpe": "2",
+        "Seriealterna": "5",
+        "ConectaControlador": "",
+        "consucursales":"S",
+        "nroturnos": "3",
+        "Grabarxmlbd": "S",
+        "IdClienteGenerico": "1",
+        "Lectorcodigobarras": "S",
+        "mostrarcpeadmin":"N",
+        "Impresoranormal": "Microsoft XPS Document Writer",
+        "Url": "https://compania-sysven.com/consulta"
+  }
+]

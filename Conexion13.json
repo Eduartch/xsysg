@@ -2,16 +2,14 @@
  {
         "Rutacertificado": "GrifoJaenAVR",
         "tipoconexion": "R",
-        "Controlcontometros": "S",
         "Diasenviocpe": "2",
         "Seriealterna": "1",
-        "ConectaControlador": "",
         "nroturnos": "4",
-         "fondo":"450_1000.jpg",
-         "barrak":"barrakgrifoilucanjvr",
-         "barravtas":"barravtasgrifioilucanjvr",
+        "fondo":"450_1000.jpg",
+        "barrak":"barrakgrifoilucanjvr",
+        "barravtas":"barravtasgrifioilucanjvr",
         "Grabarxmlbd": "S",
-        "Lectorcodigobarras": "S",
-        "Url": "https://compania-sysven.com/consulta"
+        "Url": "https://compania-sysven.com/consulta",
+        "EmisorGuiasRemisionElectronica":"S"
      }
 ]

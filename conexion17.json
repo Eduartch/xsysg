@@ -1,5 +1,5 @@
 [{
-	    "tipoconexion": "R",
+	        "tipoconexion": "R",
 		"Controlcontometros": "N",
 		"Diasenviocpe": "2",
 		"Seriealterna": "1",
@@ -10,7 +10,7 @@
 		"Url": "https://compania-sysven.com/consulta",
 		"ConectaControlador": "N",
 		"Grabarxmlbd": "S",
-		"Codigopromocion": "",
                 "rutacertificado":"CertificadoYsabella",
-		"Controloferta": ""
+                "EmisorGuiasRemisionElectronica":"S"
+  
 	}]

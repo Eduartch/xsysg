@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 10/18/22          SISVENMARKET.MPR            05:52:34  
+*       * 04/23/24          SISVENMARKET.MPR            15:04:19  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2022 Etch Sys                             
+*       * Copyright (C) 2024 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -140,24 +140,24 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _6gd0clewv OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp0 OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _6gd0cleww OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp1 OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _6gd0clewx OF (m.cMenuName) PROMPT "Créditos" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp2 OF (m.cMenuName) PROMPT "Créditos" COLOR SCHEME 3 ;
 	KEY ALT+C, ""
-DEFINE PAD _6gd0clewy OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp3 OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
 	KEY ALT+I, ""
-DEFINE PAD _6gd0clewz OF (m.cMenuName) PROMPT "Historial" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp4 OF (m.cMenuName) PROMPT "Historial" COLOR SCHEME 3 ;
 	KEY ALT+H, ""
-DEFINE PAD _6gd0clex0 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _6vu0wayp5 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _6gd0clewv OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _6gd0cleww OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _6gd0clewx OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
-ON PAD _6gd0clewy OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
-ON PAD _6gd0clewz OF (m.cMenuName) ACTIVATE POPUP (a_menupops[16])
-ON PAD _6gd0clex0 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[18])
+ON PAD _6vu0wayp0 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6vu0wayp1 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _6vu0wayp2 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
+ON PAD _6vu0wayp3 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
+ON PAD _6vu0wayp4 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[16])
+ON PAD _6vu0wayp5 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[18])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Productos"
@@ -173,7 +173,7 @@ DEFINE BAR 10 OF (a_menupops[1]) PROMPT "\-"
 DEFINE BAR 11 OF (a_menupops[1]) PROMPT "Tipo de Cambio"
 ON SELECTION BAR 1 OF (a_menupops[1]) goapp.form("ar_productos","N")
 ON SELECTION BAR 3 OF (a_menupops[1]) ;
-	DO _6gd0clex1 ;
+	DO _6vu0wayp6 ;
 	IN LOCFILE("\XSYSG\MENUS\SISVENMARKET" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVENMARKET?")
 ON SELECTION BAR 4 OF (a_menupops[1]) goapp.form("ar_proveedores")
 ON SELECTION BAR 6 OF (a_menupops[1]) do form  ar_usuarios
@@ -192,7 +192,9 @@ DEFINE BAR 7 OF (a_menupops[2]) PROMPT "Ajuste de Inventarios"
 ON BAR 1 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[3])
 ON BAR 3 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[4])
 ON SELECTION BAR 5 OF (a_menupops[2]) goapp.form("ka_caja")
-ON SELECTION BAR 7 OF (a_menupops[2]) goapp.form("ka_ajusateinve")
+ON SELECTION BAR 7 OF (a_menupops[2]) ;
+	DO _6vu0wayp7 ;
+	IN LOCFILE("\XSYSG\MENUS\SISVENMARKET" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVENMARKET?")
 
 DEFINE POPUP (a_menupops[3]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[3]) PROMPT "Registrar Compras.."
@@ -202,7 +204,7 @@ DEFINE BAR 4 OF (a_menupops[3]) PROMPT "\-"
 DEFINE BAR 5 OF (a_menupops[3]) PROMPT "Otras Compras"
 ON SELECTION BAR 1 OF (a_menupops[3]) goapp.form("ka_compras","","","")
 ON SELECTION BAR 3 OF (a_menupops[3]) ;
-	DO _6gd0clex2 ;
+	DO _6vu0wayp8 ;
 	IN LOCFILE("\XSYSG\MENUS\SISVENMARKET" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVENMARKET?")
 ON SELECTION BAR 5 OF (a_menupops[3]) goapp.form("co_compras1")
 
@@ -210,8 +212,11 @@ DEFINE POPUP (a_menupops[4]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[4]) PROMPT "Ventas .."
 DEFINE BAR 2 OF (a_menupops[4]) PROMPT "\-"
 DEFINE BAR 3 OF (a_menupops[4]) PROMPT "Notas de Credito/Debito"
+DEFINE BAR 4 OF (a_menupops[4]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[4]) PROMPT "Baja de Resumen de Boletas"
 ON SELECTION BAR 1 OF (a_menupops[4]) goapp.Form("ka_ventasmarket")
 ON SELECTION BAR 3 OF (a_menupops[4]) goapp.form("ka_notasventas")
+ON SELECTION BAR 5 OF (a_menupops[4]) goapp.form("ka_resumeboletas10")
 
 DEFINE POPUP (a_menupops[5]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[5]) PROMPT "Transacciones"
@@ -402,10 +407,10 @@ ON SELECTION BAR 3 OF (a_menupops[18]) do form ka_elimina
 ON SELECTION BAR 5 OF (a_menupops[18]) do form ka_backup
 ON SELECTION BAR 7 OF (a_menupops[18]) goapp.form("ka_daopciones")
 ON SELECTION BAR 9 OF (a_menupops[18]) ;
-	DO _6gd0clexd ;
+	DO _6vu0wayp9 ;
 	IN LOCFILE("\XSYSG\MENUS\SISVENMARKET" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVENMARKET?")
 ON SELECTION BAR 11 OF (a_menupops[18]) ;
-	DO _6gd0clexe ;
+	DO _6vu0waypa ;
 	IN LOCFILE("\XSYSG\MENUS\SISVENMARKET" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVENMARKET?")
 ON SELECTION BAR 13 OF (a_menupops[18]) goapp.form("ka_configurar")
 
@@ -419,7 +424,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _6GD0CLEX1  ON SELECTION BAR 3 OF POPUP adminuistr      
+*       * _6VU0WAYP6  ON SELECTION BAR 3 OF POPUP adminuistr      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -430,7 +435,7 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6gd0clex1
+PROCEDURE _6vu0wayp6
 If goapp.ConectaControlador='S' Then
 	goapp.Form("ar_clientes20")
 Else
@@ -441,25 +446,47 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6GD0CLEX2  ON SELECTION BAR 3 OF POPUP ingresosco      
+*       * _6VU0WAYP7  ON SELECTION BAR 7 OF POPUP movimiento      
+*       *                                                         
+*       * Procedure Origin:                                       
+*       *                                                         
+*       * From Menu:  SISVENMARKET.MPR,            Record:   46   
+*       * Called By:  ON SELECTION BAR 7 OF POPUP movimiento      
+*       * Prompt:     Ajuste de Inventarios                       
+*       * Snippet:    2                                           
+*       *                                                         
+*       *********************************************************
+*
+PROCEDURE _6vu0wayp7
+Do Form v_verifica With "Z" To verdad
+If verdad
+	goapp.Form("ka_ajusateinve")
+Endif
+
+
+
+
+*       *********************************************************
+*       *                                                         
+*       * _6VU0WAYP8  ON SELECTION BAR 3 OF POPUP ingresosco      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
 *       * From Menu:  SISVENMARKET.MPR,            Record:   27   
 *       * Called By:  ON SELECTION BAR 3 OF POPUP ingresosco      
 *       * Prompt:     Actualizar Compra                           
-*       * Snippet:    2                                           
+*       * Snippet:    3                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6gd0clex2
+PROCEDURE _6vu0wayp8
 Do Form ka_lselecciona With 0,"C" To nids
 If nids>0 Then
 	If ldctos.tdoc='07' Or ldctos.tdoc='08' Then
 		Messagebox("Este Tipo de Documento No es Posible Actualizar(Notas Crédito/Debito",16,MSGTITULO)
 		Return
 	Endif
-	Do Form v_verifica With "A" To verdad
+	Do Form v_verifica With "Z" To verdad
 	If verdad
 		goapp.Form("ka_ucompras",nids,'A')
 	Endif
@@ -471,18 +498,18 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6GD0CLEXD  ON SELECTION BAR 9 OF POPUP utilidades      
+*       * _6VU0WAYP9  ON SELECTION BAR 9 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVENMARKET.MPR,            Record:  188   
+*       * From Menu:  SISVENMARKET.MPR,            Record:  191   
 *       * Called By:  ON SELECTION BAR 9 OF POPUP utilidades      
 *       * Prompt:     Obtener Stock-Fecha Sistema                 
-*       * Snippet:    3                                           
+*       * Snippet:    4                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6gd0clexd
+PROCEDURE _6vu0wayp9
 *!*	TEXT TO lc NOSHOW
 *!*	SELECT a.idart
 *!*	FROM (SELECT idart FROM fe_kar AS b INNER JOIN fe_rcom AS a
@@ -515,18 +542,18 @@ Messagebox("Stock Calculado",64,"SYSVEN")
 
 *       *********************************************************
 *       *                                                         
-*       * _6GD0CLEXE  ON SELECTION BAR 11 OF POPUP utilidades     
+*       * _6VU0WAYPA  ON SELECTION BAR 11 OF POPUP utilidades     
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVENMARKET.MPR,            Record:  191   
+*       * From Menu:  SISVENMARKET.MPR,            Record:  194   
 *       * Called By:  ON SELECTION BAR 11 OF POPUP utilidades     
 *       * Prompt:     Cambiar Clave  de Usuario                   
-*       * Snippet:    4                                           
+*       * Snippet:    5                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6gd0clexe
+PROCEDURE _6vu0waypa
 Do Form ar_cclave With goapp.usuario,goapp.cclave,goapp.nidusua
 
 	

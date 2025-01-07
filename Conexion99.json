@@ -1,0 +1,20 @@
+[
+	{
+	"tipoconexion":"L",
+	"Diasenviocpe":"2",
+	"conectacontrolador":"Y",
+	"ImprimirFacturaNormal":"S",
+	"logotipo":"Logosipanr.png",
+	"urlsunat":"https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService",
+	"Grabarxmlbd":"S",
+	"Codigopromocion":"",
+	"Controloferta":"S",
+	"fondo":"fondoceleste.jpg",
+	"rutacertificado":"grifomotupe",
+	"Url":"https://compania-sysven.com/consulta",
+	"Validarcredito":"N",
+	"EmisorGuiasRemisionElectronica":"S",
+	"idclientegenerico":"405",
+	"enviocorreoapi":"S"
+	}
+]

@@ -1,0 +1,14 @@
+[ {
+        "tipoconexion": "R",
+        "Diasenviocpe": "2",
+        "Controlcontometros": "N",
+        "Seriealterna": "1",
+        "nroturnos": "3",
+        "Rutacertificado": "grifotranca",
+        "impresoranormal":"Microsoft XPS Document Writer",
+        "Url":"https://compania-sysven.com/consulta",
+        "Grabarxmlbd": "S",
+        "Codigopromocion": "65",
+		"Logotipo":"logotrancasa.png"
+   }
+]

@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 07/08/23             SISVEN.MPR               12:03:46  
+*       * 12/16/24             SISVEN.MPR               15:27:33  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2023 Etch Sys                             
+*       * Copyright (C) 2024 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -104,7 +104,7 @@ ENDIF
 IF m.cTypeParm2 = "C" AND !EMPTY(m.getMenuName)
 	m.cMenuName = m.getMenuName
 ENDIF
-DIMENSION a_menupops[22]
+DIMENSION a_menupops[23]
 IF TYPE("m.lUniquePopups")="L" AND m.lUniquePopups
 	FOR nTotPops = 1 TO ALEN(a_menupops)
 		a_menupops[m.nTotPops]= SYS(2015)
@@ -115,23 +115,24 @@ ELSE
 	a_menupops[3]="movimiento"
 	a_menupops[4]="ingresosco"
 	a_menupops[5]="gestionarv"
-	a_menupops[6]="_6gz0np0o8"
-	a_menupops[7]="_6k10mfjwv"
-	a_menupops[8]="créditos"
-	a_menupops[9]="ctasporpag"
-	a_menupops[10]="informes"
-	a_menupops[11]="contables"
-	a_menupops[12]="auditoria"
-	a_menupops[13]="caja"
-	a_menupops[14]="inventario"
-	a_menupops[15]="vendedores"
-	a_menupops[16]="compras"
-	a_menupops[17]="ventas"
-	a_menupops[18]="transaccio"
-	a_menupops[19]="documentos"
-	a_menupops[20]="historial"
-	a_menupops[21]="camnbios"
-	a_menupops[22]="utilidades"
+	a_menupops[6]="ventasporc"
+	a_menupops[7]="_6gz0np0o8"
+	a_menupops[8]="_6k10mfjwv"
+	a_menupops[9]="créditos"
+	a_menupops[10]="ctasporpag"
+	a_menupops[11]="informes"
+	a_menupops[12]="contables"
+	a_menupops[13]="auditoria"
+	a_menupops[14]="caja"
+	a_menupops[15]="inventario"
+	a_menupops[16]="vendedores"
+	a_menupops[17]="compras"
+	a_menupops[18]="ventas"
+	a_menupops[19]="transaccio"
+	a_menupops[20]="documentos"
+	a_menupops[21]="historial"
+	a_menupops[22]="camnbios"
+	a_menupops[23]="utilidades"
 ENDIF
 
 
@@ -144,27 +145,27 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _6nq0puq8x OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uo6 OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _6nq0puq8y OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uo7 OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _6nq0puq8z OF (m.cMenuName) PROMPT "Créditos" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uo8 OF (m.cMenuName) PROMPT "Créditos" COLOR SCHEME 3 ;
 	KEY ALT+C, ""
-DEFINE PAD _6nq0puq90 OF (m.cMenuName) PROMPT "Ctas P\<or Pagar" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uo9 OF (m.cMenuName) PROMPT "Ctas P\<or Pagar" COLOR SCHEME 3 ;
 	KEY ALT+O, ""
-DEFINE PAD _6nq0puq91 OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uoa OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
 	KEY ALT+I, ""
-DEFINE PAD _6nq0puq92 OF (m.cMenuName) PROMPT "Historial" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uob OF (m.cMenuName) PROMPT "Historial" COLOR SCHEME 3 ;
 	KEY ALT+H, ""
-DEFINE PAD _6nq0puq93 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _72f0x4uoc OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _6nq0puq8x OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _6nq0puq8y OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
-ON PAD _6nq0puq8z OF (m.cMenuName) ACTIVATE POPUP (a_menupops[8])
-ON PAD _6nq0puq90 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[9])
-ON PAD _6nq0puq91 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[10])
-ON PAD _6nq0puq92 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[20])
-ON PAD _6nq0puq93 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[22])
+ON PAD _72f0x4uo6 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _72f0x4uo7 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _72f0x4uo8 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[9])
+ON PAD _72f0x4uo9 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[10])
+ON PAD _72f0x4uoa OF (m.cMenuName) ACTIVATE POPUP (a_menupops[11])
+ON PAD _72f0x4uob OF (m.cMenuName) ACTIVATE POPUP (a_menupops[21])
+ON PAD _72f0x4uoc OF (m.cMenuName) ACTIVATE POPUP (a_menupops[23])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Productos"
@@ -191,7 +192,7 @@ DEFINE BAR 21 OF (a_menupops[1]) PROMPT "Zonas"
 ON SELECTION BAR 1 OF (a_menupops[1]) goapp.form("ar_productos","N")
 ON SELECTION BAR 3 OF (a_menupops[1]) goapp.form("ka_promociones")
 ON SELECTION BAR 5 OF (a_menupops[1]) ;
-	DO _6nq0puq94 ;
+	DO _72f0x4uod ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 6 OF (a_menupops[1]) goapp.form("ar_proveedores")
 ON SELECTION BAR 8 OF (a_menupops[1]) goapp.form("ar_transportistas")
@@ -228,12 +229,12 @@ DEFINE BAR 14 OF (a_menupops[3]) PROMPT "\-"
 DEFINE BAR 15 OF (a_menupops[3]) PROMPT "Caja"
 ON BAR 1 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[4])
 ON BAR 3 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[5])
-ON BAR 5 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[6])
-ON BAR 7 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[7])
+ON BAR 5 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[7])
+ON BAR 7 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[8])
 ON SELECTION BAR 9 OF (a_menupops[3]) goapp.form("ka_cerafinado")
 ON SELECTION BAR 11 OF (a_menupops[3]) goapp.form("co_ilcaja")
 ON SELECTION BAR 13 OF (a_menupops[3]) ;
-	DO _6nq0puq95 ;
+	DO _72f0x4uoe ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 15 OF (a_menupops[3]) goapp.form("ka_caja")
 
@@ -251,7 +252,7 @@ ON SELECTION BAR 2 OF (a_menupops[4]) goapp.form("ka_compras","","","")
 ON SELECTION BAR 3 OF (a_menupops[4]) goapp.form("ka_guiascompras")
 ON SELECTION BAR 4 OF (a_menupops[4]) goapp.form("ka_notascompras")
 ON SELECTION BAR 6 OF (a_menupops[4]) ;
-	DO _6nq0puq96 ;
+	DO _72f0x4uof ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 8 OF (a_menupops[4]) goapp.form("co_compras1")
 
@@ -262,294 +263,307 @@ DEFINE BAR 3 OF (a_menupops[5]) PROMPT "Ventas Por Turnos NO Exoneradas"
 DEFINE BAR 4 OF (a_menupops[5]) PROMPT "Ventas Por Servicios..."
 DEFINE BAR 5 OF (a_menupops[5]) PROMPT "Bajas - Anulaciones"
 DEFINE BAR 6 OF (a_menupops[5]) PROMPT "Resumen de Boletas y Notas"
-DEFINE BAR 7 OF (a_menupops[5]) PROMPT "Anular Boletas"
-DEFINE BAR 8 OF (a_menupops[5]) PROMPT "\-"
-DEFINE BAR 9 OF (a_menupops[5]) PROMPT "Canje de Vales por Facturas"
-DEFINE BAR 10 OF (a_menupops[5]) PROMPT "\-"
-DEFINE BAR 11 OF (a_menupops[5]) PROMPT "Notas de Credito/Debito"
-DEFINE BAR 12 OF (a_menupops[5]) PROMPT "\-"
-DEFINE BAR 13 OF (a_menupops[5]) PROMPT "Ventas Por Contingencia"
+DEFINE BAR 7 OF (a_menupops[5]) PROMPT "Anular Resumen de Boletas"
+DEFINE BAR 8 OF (a_menupops[5]) PROMPT "Actualizar Ventas"
+DEFINE BAR 9 OF (a_menupops[5]) PROMPT "\-"
+DEFINE BAR 10 OF (a_menupops[5]) PROMPT "Canje de Vales por Facturas"
+DEFINE BAR 11 OF (a_menupops[5]) PROMPT "\-"
+DEFINE BAR 12 OF (a_menupops[5]) PROMPT "Notas de Credito/Debito"
+DEFINE BAR 13 OF (a_menupops[5]) PROMPT "\-"
+DEFINE BAR 14 OF (a_menupops[5]) PROMPT "Ventas Por Contingencia"
 ON SELECTION BAR 1 OF (a_menupops[5]) ;
-	DO _6nq0puq97 ;
+	DO _72f0x4uog ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 2 OF (a_menupops[5]) ;
-	DO _6nq0puq98 ;
+	DO _72f0x4uoh ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 3 OF (a_menupops[5]) ;
-	DO _6nq0puq99 ;
+	DO _72f0x4uoi ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 4 OF (a_menupops[5]) goapp.form("co_oventas1")
 ON SELECTION BAR 5 OF (a_menupops[5]) ;
-	DO _6nq0puq9a ;
+	DO _72f0x4uoj ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 ON SELECTION BAR 6 OF (a_menupops[5]) goapp.form("ka_resumeboletas")
 ON SELECTION BAR 7 OF (a_menupops[5]) goapp.form("ka_resumeboletas10")
-ON SELECTION BAR 9 OF (a_menupops[5]) goapp.form("ka_fapedidos")
-ON SELECTION BAR 11 OF (a_menupops[5]) goapp.form("ka_notasventas")
-ON SELECTION BAR 13 OF (a_menupops[5]) ;
-	DO _6nq0puq9b ;
+ON SELECTION BAR 8 OF (a_menupops[5]) ;
+	DO _72f0x4uok ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
+ON SELECTION BAR 10 OF (a_menupops[5]) goapp.form("ka_fapedidos")
+ON SELECTION BAR 12 OF (a_menupops[5]) goapp.form("ka_notasventas")
+ON BAR 14 OF (a_menupops[5]) ACTIVATE POPUP (a_menupops[6])
 
 DEFINE POPUP (a_menupops[6]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[6]) PROMPT "Guias Directas"
+DEFINE BAR 1 OF (a_menupops[6]) PROMPT "No Exoneradas"
 DEFINE BAR 2 OF (a_menupops[6]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[6]) PROMPT "Guias de Remisión Por Ventas"
-DEFINE BAR 4 OF (a_menupops[6]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[6]) PROMPT "Canje de Guias"
-ON SELECTION BAR 1 OF (a_menupops[6]) goapp.form("ka_guiasrventas")
-ON SELECTION BAR 3 OF (a_menupops[6]) goapp.form("ka_guiasventas")
-ON SELECTION BAR 5 OF (a_menupops[6]) goapp.form("ka_faguias")
+DEFINE BAR 3 OF (a_menupops[6]) PROMPT "Exoneradas"
+ON SELECTION BAR 1 OF (a_menupops[6]) goapp.Form("ka_ventasant",'N')
+ON SELECTION BAR 3 OF (a_menupops[6]) ;
+	DO _72f0x4uol ;
+	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 
 DEFINE POPUP (a_menupops[7]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[7]) PROMPT "Ajuste de Inventarios"
-ON SELECTION BAR 1 OF (a_menupops[7]) goapp.form("ka_ajusateinve")
+DEFINE BAR 1 OF (a_menupops[7]) PROMPT "Guias Por Compras"
+DEFINE BAR 2 OF (a_menupops[7]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[7]) PROMPT "Guias Directas"
+DEFINE BAR 4 OF (a_menupops[7]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[7]) PROMPT "Guias de Remisión Por Ventas"
+DEFINE BAR 6 OF (a_menupops[7]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[7]) PROMPT "Canje de Guias"
+ON SELECTION BAR 1 OF (a_menupops[7]) goapp.form("ka_guiasrcompras")
+ON SELECTION BAR 3 OF (a_menupops[7]) goapp.form("ka_guiasrventas")
+ON SELECTION BAR 5 OF (a_menupops[7]) goapp.form("ka_guiasventas")
+ON SELECTION BAR 7 OF (a_menupops[7]) goapp.form("ka_faguias")
 
 DEFINE POPUP (a_menupops[8]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[8]) PROMPT "Transacciones"
-DEFINE BAR 2 OF (a_menupops[8]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[8]) PROMPT "Vencimientos a la Fecha.."
-DEFINE BAR 4 OF (a_menupops[8]) PROMPT "Créditos-Pagos"
-DEFINE BAR 5 OF (a_menupops[8]) PROMPT "Cancelaciones Por Periodo"
-DEFINE BAR 6 OF (a_menupops[8]) PROMPT "Pendientes Por Fecha de Emisiòn"
-DEFINE BAR 7 OF (a_menupops[8]) PROMPT "\-"
-DEFINE BAR 8 OF (a_menupops[8]) PROMPT "Resumen de Créditos"
-ON SELECTION BAR 1 OF (a_menupops[8]) goapp.form("cr_cdeudas")
-ON SELECTION BAR 3 OF (a_menupops[8]) goapp.form("cr_vtosletras")
-ON SELECTION BAR 4 OF (a_menupops[8]) goapp.form("cr_provisiones")
-ON SELECTION BAR 5 OF (a_menupops[8]) goapp.form("cr_cancelaciones")
-ON SELECTION BAR 6 OF (a_menupops[8]) goapp.form("cr_pdtes")
-ON SELECTION BAR 8 OF (a_menupops[8]) goapp.form("cr_cuentaspagar")
+DEFINE BAR 1 OF (a_menupops[8]) PROMPT "Ajuste de Inventarios"
+ON SELECTION BAR 1 OF (a_menupops[8]) ;
+	DO _72f0x4uom ;
+	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 
 DEFINE POPUP (a_menupops[9]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[9]) PROMPT "Transacciones"
 DEFINE BAR 2 OF (a_menupops[9]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[9]) PROMPT "Vencimientos" ;
-	KEY F11, "F11"
-DEFINE BAR 4 OF (a_menupops[9]) PROMPT "Cancelaciones Por Periodo"
-DEFINE BAR 5 OF (a_menupops[9]) PROMPT "Pendientes Por Fecha Emisiòn"
-DEFINE BAR 6 OF (a_menupops[9]) PROMPT "Créditos-Pagos"
+DEFINE BAR 3 OF (a_menupops[9]) PROMPT "Vencimientos a la Fecha.."
+DEFINE BAR 4 OF (a_menupops[9]) PROMPT "Créditos-Pagos"
+DEFINE BAR 5 OF (a_menupops[9]) PROMPT "Cancelaciones Por Periodo"
+DEFINE BAR 6 OF (a_menupops[9]) PROMPT "Pendientes Por Fecha de Emisiòn"
 DEFINE BAR 7 OF (a_menupops[9]) PROMPT "\-"
-DEFINE BAR 8 OF (a_menupops[9]) PROMPT "Resumen Cuentas Por Pagar"
-ON SELECTION BAR 1 OF (a_menupops[9]) goapp.form("de_cdeudas")
-ON SELECTION BAR 3 OF (a_menupops[9]) goapp.form("de_vtosletras")
-ON SELECTION BAR 4 OF (a_menupops[9]) goapp.form("de_cancelaciones")
-ON SELECTION BAR 5 OF (a_menupops[9]) goapp.form("de_pdtes")
-ON SELECTION BAR 6 OF (a_menupops[9]) goapp.form("de_provisiones")
-ON SELECTION BAR 8 OF (a_menupops[9]) goapp.form("de_cuentaspagar")
+DEFINE BAR 8 OF (a_menupops[9]) PROMPT "Resumen de Créditos"
+ON SELECTION BAR 1 OF (a_menupops[9]) goapp.form("cr_cdeudas")
+ON SELECTION BAR 3 OF (a_menupops[9]) goapp.form("cr_vtosletras")
+ON SELECTION BAR 4 OF (a_menupops[9]) goapp.form("cr_provisiones")
+ON SELECTION BAR 5 OF (a_menupops[9]) goapp.form("cr_cancelaciones")
+ON SELECTION BAR 6 OF (a_menupops[9]) goapp.form("cr_pdtes")
+ON SELECTION BAR 8 OF (a_menupops[9]) goapp.form("cr_cuentaspagar")
 
 DEFINE POPUP (a_menupops[10]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[10]) PROMPT "Contables"
+DEFINE BAR 1 OF (a_menupops[10]) PROMPT "Transacciones"
 DEFINE BAR 2 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[10]) PROMPT "Auditoria"
-DEFINE BAR 4 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[10]) PROMPT "Caja"
-DEFINE BAR 6 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 7 OF (a_menupops[10]) PROMPT "Inventarios"
-DEFINE BAR 8 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 9 OF (a_menupops[10]) PROMPT "Vendedores"
-DEFINE BAR 10 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 11 OF (a_menupops[10]) PROMPT "Compras"
-DEFINE BAR 12 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 13 OF (a_menupops[10]) PROMPT "Ventas"
-DEFINE BAR 14 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 15 OF (a_menupops[10]) PROMPT "Transacciones"
-DEFINE BAR 16 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 17 OF (a_menupops[10]) PROMPT "Bancos"
-DEFINE BAR 18 OF (a_menupops[10]) PROMPT "\-"
-DEFINE BAR 19 OF (a_menupops[10]) PROMPT "Documentos Electrónicos"
-ON BAR 1 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[11])
-ON BAR 3 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[12])
-ON BAR 5 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[13])
-ON BAR 7 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[14])
-ON BAR 9 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[15])
-ON BAR 11 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[16])
-ON BAR 13 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[17])
-ON BAR 15 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[18])
-ON SELECTION BAR 17 OF (a_menupops[10]) goapp.form("co_rlcaja")
-ON BAR 19 OF (a_menupops[10]) ACTIVATE POPUP (a_menupops[19])
+DEFINE BAR 3 OF (a_menupops[10]) PROMPT "Vencimientos" ;
+	KEY F11, "F11"
+DEFINE BAR 4 OF (a_menupops[10]) PROMPT "Cancelaciones Por Periodo"
+DEFINE BAR 5 OF (a_menupops[10]) PROMPT "Pendientes Por Fecha Emisiòn"
+DEFINE BAR 6 OF (a_menupops[10]) PROMPT "Créditos-Pagos"
+DEFINE BAR 7 OF (a_menupops[10]) PROMPT "\-"
+DEFINE BAR 8 OF (a_menupops[10]) PROMPT "Resumen Cuentas Por Pagar"
+ON SELECTION BAR 1 OF (a_menupops[10]) goapp.form("de_cdeudas")
+ON SELECTION BAR 3 OF (a_menupops[10]) goapp.form("de_vtosletras")
+ON SELECTION BAR 4 OF (a_menupops[10]) goapp.form("de_cancelaciones")
+ON SELECTION BAR 5 OF (a_menupops[10]) goapp.form("de_pdtes")
+ON SELECTION BAR 6 OF (a_menupops[10]) goapp.form("de_provisiones")
+ON SELECTION BAR 8 OF (a_menupops[10]) goapp.form("de_cuentaspagar")
 
 DEFINE POPUP (a_menupops[11]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[11]) PROMPT "Asignar Tipo de Cambio"
+DEFINE BAR 1 OF (a_menupops[11]) PROMPT "Contables"
 DEFINE BAR 2 OF (a_menupops[11]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[11]) PROMPT "Registro de Compras"
-DEFINE BAR 4 OF (a_menupops[11]) PROMPT "Registro de Ventas"
-DEFINE BAR 5 OF (a_menupops[11]) PROMPT "Operaciones DAOT"
+DEFINE BAR 3 OF (a_menupops[11]) PROMPT "Auditoria"
+DEFINE BAR 4 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[11]) PROMPT "Caja"
 DEFINE BAR 6 OF (a_menupops[11]) PROMPT "\-"
-DEFINE BAR 7 OF (a_menupops[11]) PROMPT "Inventario"
-DEFINE BAR 8 OF (a_menupops[11]) PROMPT "Kardex Valorizado Individual"
-DEFINE BAR 9 OF (a_menupops[11]) PROMPT "\-"
-DEFINE BAR 10 OF (a_menupops[11]) PROMPT "Inventario Permanente Valorizado"
-ON SELECTION BAR 1 OF (a_menupops[11]) goapp.form("co_aplica")
-ON SELECTION BAR 3 OF (a_menupops[11]) do form ka_registros1 with "C"
-ON SELECTION BAR 4 OF (a_menupops[11]) do form ka_registros with "V"
-ON SELECTION BAR 5 OF (a_menupops[11]) goapp.form("ka_dao")
-ON SELECTION BAR 7 OF (a_menupops[11]) goapp.form("ka_inventariosp")
-ON SELECTION BAR 8 OF (a_menupops[11]) goapp.form("ka_tkardex","",0)
-ON SELECTION BAR 10 OF (a_menupops[11]) goapp.form("ka_c1")
+DEFINE BAR 7 OF (a_menupops[11]) PROMPT "Inventarios"
+DEFINE BAR 8 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 9 OF (a_menupops[11]) PROMPT "Vendedores"
+DEFINE BAR 10 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 11 OF (a_menupops[11]) PROMPT "Compras"
+DEFINE BAR 12 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 13 OF (a_menupops[11]) PROMPT "Ventas"
+DEFINE BAR 14 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 15 OF (a_menupops[11]) PROMPT "Transacciones"
+DEFINE BAR 16 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 17 OF (a_menupops[11]) PROMPT "Bancos"
+DEFINE BAR 18 OF (a_menupops[11]) PROMPT "\-"
+DEFINE BAR 19 OF (a_menupops[11]) PROMPT "Documentos Electrónicos"
+ON BAR 1 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[12])
+ON BAR 3 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[13])
+ON BAR 5 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[14])
+ON BAR 7 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[15])
+ON BAR 9 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[16])
+ON BAR 11 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[17])
+ON BAR 13 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[18])
+ON BAR 15 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[19])
+ON SELECTION BAR 17 OF (a_menupops[11]) goapp.form("co_rlcaja")
+ON BAR 19 OF (a_menupops[11]) ACTIVATE POPUP (a_menupops[20])
 
 DEFINE POPUP (a_menupops[12]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[12]) PROMPT "Verficador Documentos"
+DEFINE BAR 1 OF (a_menupops[12]) PROMPT "Asignar Tipo de Cambio"
 DEFINE BAR 2 OF (a_menupops[12]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[12]) PROMPT "Kardex-Resumen-Caja"
-ON SELECTION BAR 1 OF (a_menupops[12]) goapp.form("ka_talonarios")
-ON SELECTION BAR 3 OF (a_menupops[12]) goapp.form("ka_auditoriar")
+DEFINE BAR 3 OF (a_menupops[12]) PROMPT "Registro de Compras"
+DEFINE BAR 4 OF (a_menupops[12]) PROMPT "Registro de Ventas"
+DEFINE BAR 5 OF (a_menupops[12]) PROMPT "Operaciones DAOT"
+DEFINE BAR 6 OF (a_menupops[12]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[12]) PROMPT "Inventario"
+DEFINE BAR 8 OF (a_menupops[12]) PROMPT "Kardex Valorizado Individual"
+DEFINE BAR 9 OF (a_menupops[12]) PROMPT "\-"
+DEFINE BAR 10 OF (a_menupops[12]) PROMPT "Inventario Permanente Valorizado"
+ON SELECTION BAR 1 OF (a_menupops[12]) goapp.form("co_aplica")
+ON SELECTION BAR 3 OF (a_menupops[12]) do form ka_registros1 with "C"
+ON SELECTION BAR 4 OF (a_menupops[12]) do form ka_registros with "V"
+ON SELECTION BAR 5 OF (a_menupops[12]) goapp.form("ka_dao")
+ON SELECTION BAR 7 OF (a_menupops[12]) goapp.form("ka_inventariosp")
+ON SELECTION BAR 8 OF (a_menupops[12]) goapp.form("ka_tkardex","",0)
+ON SELECTION BAR 10 OF (a_menupops[12]) goapp.form("ka_c1")
 
 DEFINE POPUP (a_menupops[13]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[13]) PROMPT "Flujo de Ventas"
+DEFINE BAR 1 OF (a_menupops[13]) PROMPT "Verficador Documentos"
 DEFINE BAR 2 OF (a_menupops[13]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[13]) PROMPT "Resumen"
-DEFINE BAR 4 OF (a_menupops[13]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[13]) PROMPT "Liquidación de Caja"
-DEFINE BAR 6 OF (a_menupops[13]) PROMPT "Resumen de Lecturas"
-DEFINE BAR 7 OF (a_menupops[13]) PROMPT "Historial de Lecturas"
-DEFINE BAR 8 OF (a_menupops[13]) PROMPT "\-"
-DEFINE BAR 9 OF (a_menupops[13]) PROMPT "Historial Cajero"
-ON SELECTION BAR 1 OF (a_menupops[13]) goapp.form("ka_infvtasy")
-ON SELECTION BAR 3 OF (a_menupops[13]) goapp.form("ka_rcaja")
-ON SELECTION BAR 5 OF (a_menupops[13]) goapp.form("ka_liquidax")
-ON SELECTION BAR 6 OF (a_menupops[13]) ;
-	DO _6nq0puq9c ;
-	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
-ON SELECTION BAR 7 OF (a_menupops[13]) goapp.form("ka_rlecturas")
-ON SELECTION BAR 9 OF (a_menupops[13]) goapp.form("ka_rliquida")
+DEFINE BAR 3 OF (a_menupops[13]) PROMPT "Kardex-Resumen-Caja"
+ON SELECTION BAR 1 OF (a_menupops[13]) goapp.form("ka_talonarios")
+ON SELECTION BAR 3 OF (a_menupops[13]) goapp.form("ka_auditoriar")
 
 DEFINE POPUP (a_menupops[14]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[14]) PROMPT "Stock Por Sucursal"
-DEFINE BAR 2 OF (a_menupops[14]) PROMPT "Inventario Por Almacen"
-DEFINE BAR 3 OF (a_menupops[14]) PROMPT "Kardex Por Almacen"
+DEFINE BAR 1 OF (a_menupops[14]) PROMPT "Flujo de Ventas"
+DEFINE BAR 2 OF (a_menupops[14]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[14]) PROMPT "Resumen"
 DEFINE BAR 4 OF (a_menupops[14]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[14]) PROMPT "Rotación de Productos"
-ON SELECTION BAR 1 OF (a_menupops[14]) goapp.form("ka_cinventarios3")
-ON SELECTION BAR 2 OF (a_menupops[14]) goapp.form("ka_cinventarios")
-ON SELECTION BAR 3 OF (a_menupops[14]) goapp.form("ka_calmacen",0)
-ON SELECTION BAR 5 OF (a_menupops[14]) goapp.form("ka_resumido")
+DEFINE BAR 5 OF (a_menupops[14]) PROMPT "Liquidación de Caja"
+DEFINE BAR 6 OF (a_menupops[14]) PROMPT "Resumen de Lecturas"
+DEFINE BAR 7 OF (a_menupops[14]) PROMPT "Historial de Lecturas"
+DEFINE BAR 8 OF (a_menupops[14]) PROMPT "\-"
+DEFINE BAR 9 OF (a_menupops[14]) PROMPT "Historial Cajero"
+ON SELECTION BAR 1 OF (a_menupops[14]) goapp.form("ka_infvtasy")
+ON SELECTION BAR 3 OF (a_menupops[14]) goapp.form("ka_rcaja")
+ON SELECTION BAR 5 OF (a_menupops[14]) goapp.form("ka_liquidax")
+ON SELECTION BAR 6 OF (a_menupops[14]) ;
+	DO _72f0x4uon ;
+	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
+ON SELECTION BAR 7 OF (a_menupops[14]) goapp.form("ka_rlecturas")
+ON SELECTION BAR 9 OF (a_menupops[14]) goapp.form("ka_rliquida")
 
 DEFINE POPUP (a_menupops[15]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[15]) PROMPT "Detalle de Ventas Por Vendedor"
-DEFINE BAR 2 OF (a_menupops[15]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[15]) PROMPT "Resumen de Ventas Por Vendedor"
-ON SELECTION BAR 1 OF (a_menupops[15]) goapp.form("ka_tvendedor")
-ON SELECTION BAR 3 OF (a_menupops[15]) goapp.form("ka_tvendedor1")
+DEFINE BAR 1 OF (a_menupops[15]) PROMPT "Stock Por Sucursal"
+DEFINE BAR 2 OF (a_menupops[15]) PROMPT "Inventario Por Almacen"
+DEFINE BAR 3 OF (a_menupops[15]) PROMPT "Kardex Por Almacen"
+DEFINE BAR 4 OF (a_menupops[15]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[15]) PROMPT "Rotación de Productos"
+ON SELECTION BAR 1 OF (a_menupops[15]) goapp.form("ka_cinventarios3")
+ON SELECTION BAR 2 OF (a_menupops[15]) goapp.form("ka_cinventarios")
+ON SELECTION BAR 3 OF (a_menupops[15]) goapp.form("ka_calmacen",0)
+ON SELECTION BAR 5 OF (a_menupops[15]) goapp.form("ka_resumido")
 
 DEFINE POPUP (a_menupops[16]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[16]) PROMPT "Compras Por Proveedor"
+DEFINE BAR 1 OF (a_menupops[16]) PROMPT "Detalle de Ventas Por Vendedor"
 DEFINE BAR 2 OF (a_menupops[16]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[16]) PROMPT "Ordenes de Compras"
-DEFINE BAR 4 OF (a_menupops[16]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[16]) PROMPT "Canjes Guias"
-DEFINE BAR 6 OF (a_menupops[16]) PROMPT "\-"
-DEFINE BAR 7 OF (a_menupops[16]) PROMPT "Estadistica de Compras"
-ON SELECTION BAR 1 OF (a_menupops[16]) goapp.form("ka_rreventas1","C","","")
-ON SELECTION BAR 3 OF (a_menupops[16]) goapp.form("ka_repds","C",0)
-ON SELECTION BAR 5 OF (a_menupops[16]) goapp.form("ka_reguiasc")
-ON SELECTION BAR 7 OF (a_menupops[16]) goapp.form("ka_rdetalles1","C")
+DEFINE BAR 3 OF (a_menupops[16]) PROMPT "Resumen de Ventas Por Vendedor"
+ON SELECTION BAR 1 OF (a_menupops[16]) goapp.form("ka_tvendedor")
+ON SELECTION BAR 3 OF (a_menupops[16]) goapp.form("ka_tvendedor1")
 
 DEFINE POPUP (a_menupops[17]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[17]) PROMPT "Ventas Por Cliente"
+DEFINE BAR 1 OF (a_menupops[17]) PROMPT "Compras Por Proveedor"
 DEFINE BAR 2 OF (a_menupops[17]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[17]) PROMPT "Rentabilidad"
+DEFINE BAR 3 OF (a_menupops[17]) PROMPT "Ordenes de Compras"
 DEFINE BAR 4 OF (a_menupops[17]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[17]) PROMPT "Detalle de Ventas"
-DEFINE BAR 6 OF (a_menupops[17]) PROMPT "Detalle de Ventas1"
-DEFINE BAR 7 OF (a_menupops[17]) PROMPT "Ventas Con Descuentos"
-DEFINE BAR 8 OF (a_menupops[17]) PROMPT "Ventas Por Turnos"
-DEFINE BAR 9 OF (a_menupops[17]) PROMPT "Ventas Con Tarjeta"
-DEFINE BAR 10 OF (a_menupops[17]) PROMPT "Detalle de Ventas Al CREDITO"
-DEFINE BAR 11 OF (a_menupops[17]) PROMPT "\-"
-DEFINE BAR 12 OF (a_menupops[17]) PROMPT "Estadistica de Ventas"
-DEFINE BAR 13 OF (a_menupops[17]) PROMPT "Analísis Por Producto"
-ON SELECTION BAR 1 OF (a_menupops[17]) goapp.form("ka_rreventas","V","","")
-ON SELECTION BAR 3 OF (a_menupops[17]) do form ka_ruproducto
-ON SELECTION BAR 5 OF (a_menupops[17]) goapp.form("ka_rdvtas1")
-ON SELECTION BAR 6 OF (a_menupops[17]) goapp.form("ka_rdvtas2")
-ON SELECTION BAR 7 OF (a_menupops[17]) goapp.form("ka_infvtas")
-ON SELECTION BAR 8 OF (a_menupops[17]) goapp.form("ka_rvtasxturnos")
-ON SELECTION BAR 9 OF (a_menupops[17]) goapp.form("ka_rtarjetas")
-ON SELECTION BAR 10 OF (a_menupops[17]) goapp.form("ka_rvtascredito")
-ON SELECTION BAR 12 OF (a_menupops[17]) goapp.form("ka_rdetalles1","V")
-ON SELECTION BAR 13 OF (a_menupops[17]) goapp.form("ka_vpproducto")
+DEFINE BAR 5 OF (a_menupops[17]) PROMPT "Canjes Guias"
+DEFINE BAR 6 OF (a_menupops[17]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[17]) PROMPT "Estadistica de Compras"
+ON SELECTION BAR 1 OF (a_menupops[17]) goapp.form("ka_rreventas1","C","","")
+ON SELECTION BAR 3 OF (a_menupops[17]) goapp.form("ka_repds","C",0)
+ON SELECTION BAR 5 OF (a_menupops[17]) goapp.form("ka_reguiasc")
+ON SELECTION BAR 7 OF (a_menupops[17]) goapp.form("ka_rdetalles1","C")
 
 DEFINE POPUP (a_menupops[18]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[18]) PROMPT "Resumen Documentos"
+DEFINE BAR 1 OF (a_menupops[18]) PROMPT "Ventas Por Cliente"
 DEFINE BAR 2 OF (a_menupops[18]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[18]) PROMPT "Detalle"
-ON SELECTION BAR 1 OF (a_menupops[18]) goapp.form("ka_rdetalles")
-ON SELECTION BAR 3 OF (a_menupops[18]) goapp.form("ka_rmvtos")
+DEFINE BAR 3 OF (a_menupops[18]) PROMPT "Rentabilidad"
+DEFINE BAR 4 OF (a_menupops[18]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[18]) PROMPT "Detalle de Ventas"
+DEFINE BAR 6 OF (a_menupops[18]) PROMPT "Detalle de Ventas1"
+DEFINE BAR 7 OF (a_menupops[18]) PROMPT "Ventas Con Descuentos"
+DEFINE BAR 8 OF (a_menupops[18]) PROMPT "Ventas Por Turnos"
+DEFINE BAR 9 OF (a_menupops[18]) PROMPT "Ventas Con Tarjeta"
+DEFINE BAR 10 OF (a_menupops[18]) PROMPT "Detalle de Ventas Al CREDITO"
+DEFINE BAR 11 OF (a_menupops[18]) PROMPT "\-"
+DEFINE BAR 12 OF (a_menupops[18]) PROMPT "Estadistica de Ventas"
+DEFINE BAR 13 OF (a_menupops[18]) PROMPT "Analísis Por Producto"
+ON SELECTION BAR 1 OF (a_menupops[18]) goapp.form("ka_rreventas","V","","")
+ON SELECTION BAR 3 OF (a_menupops[18]) do form ka_ruproducto
+ON SELECTION BAR 5 OF (a_menupops[18]) goapp.form("ka_rdvtas1")
+ON SELECTION BAR 6 OF (a_menupops[18]) goapp.form("ka_rdvtas2")
+ON SELECTION BAR 7 OF (a_menupops[18]) goapp.form("ka_infvtas")
+ON SELECTION BAR 8 OF (a_menupops[18]) goapp.form("ka_rvtasxturnos")
+ON SELECTION BAR 9 OF (a_menupops[18]) goapp.form("ka_rtarjetas")
+ON SELECTION BAR 10 OF (a_menupops[18]) goapp.form("ka_rvtascredito")
+ON SELECTION BAR 12 OF (a_menupops[18]) goapp.form("ka_rdetalles1","V")
+ON SELECTION BAR 13 OF (a_menupops[18]) goapp.form("ka_vpproducto")
 
 DEFINE POPUP (a_menupops[19]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[19]) PROMPT "Reimprimir y Envío Por Correo"
-DEFINE BAR 2 OF (a_menupops[19]) PROMPT "Reimprimir Guias Remisión"
-DEFINE BAR 3 OF (a_menupops[19]) PROMPT "Respuestas Documentos" ;
-	KEY F8, "F8"
-DEFINE BAR 4 OF (a_menupops[19]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[19]) PROMPT "Resumen de Boletas"
-DEFINE BAR 6 OF (a_menupops[19]) PROMPT "Resumen de Bajas"
-DEFINE BAR 7 OF (a_menupops[19]) PROMPT "\-"
-DEFINE BAR 8 OF (a_menupops[19]) PROMPT "No Envíados" ;
-	KEY F7, "F7"
-ON SELECTION BAR 1 OF (a_menupops[19]) goapp.form("ka_rxf")
-ON SELECTION BAR 2 OF (a_menupops[19]) goapp.form("ka_rxguias")
-ON SELECTION BAR 3 OF (a_menupops[19]) goapp.form("ka_rfe")
-ON SELECTION BAR 5 OF (a_menupops[19]) goapp.form("ka_rboletas")
-ON SELECTION BAR 6 OF (a_menupops[19]) goapp.form("ka_rbajas")
-ON SELECTION BAR 8 OF (a_menupops[19]) goapp.form("ka_rfe1")
+DEFINE BAR 1 OF (a_menupops[19]) PROMPT "Resumen Documentos"
+DEFINE BAR 2 OF (a_menupops[19]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[19]) PROMPT "Detalle"
+ON SELECTION BAR 1 OF (a_menupops[19]) goapp.form("ka_rdetalles")
+ON SELECTION BAR 3 OF (a_menupops[19]) goapp.form("ka_rmvtos")
 
 DEFINE POPUP (a_menupops[20]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[20]) PROMPT "Precios"
-DEFINE BAR 2 OF (a_menupops[20]) PROMPT "Caja"
-DEFINE BAR 3 OF (a_menupops[20]) PROMPT "\-"
-DEFINE BAR 4 OF (a_menupops[20]) PROMPT "Kardex"
-DEFINE BAR 5 OF (a_menupops[20]) PROMPT "\-"
-DEFINE BAR 6 OF (a_menupops[20]) PROMPT "Créditos"
-DEFINE BAR 7 OF (a_menupops[20]) PROMPT "Pagos de Créditos"
-DEFINE BAR 8 OF (a_menupops[20]) PROMPT "\-"
-DEFINE BAR 9 OF (a_menupops[20]) PROMPT "Cambios"
-ON SELECTION BAR 1 OF (a_menupops[20]) goapp.form("ka_llprecios")
-ON SELECTION BAR 2 OF (a_menupops[20]) goapp.form("ka_lcaja")
-ON SELECTION BAR 4 OF (a_menupops[20]) goapp.form("ka_lkardex",0)
-ON SELECTION BAR 6 OF (a_menupops[20]) goapp.form("ka_lcreditos")
-ON SELECTION BAR 7 OF (a_menupops[20]) goapp.form("ka_lcreditos1")
-ON BAR 9 OF (a_menupops[20]) ACTIVATE POPUP (a_menupops[21])
+DEFINE BAR 1 OF (a_menupops[20]) PROMPT "Reimprimir y Envío Por Correo"
+DEFINE BAR 2 OF (a_menupops[20]) PROMPT "Reimprimir Guias Remisión"
+DEFINE BAR 3 OF (a_menupops[20]) PROMPT "Respuestas Documentos" ;
+	KEY F8, "F8"
+DEFINE BAR 4 OF (a_menupops[20]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[20]) PROMPT "Resumen de Boletas"
+DEFINE BAR 6 OF (a_menupops[20]) PROMPT "Resumen de Bajas"
+DEFINE BAR 7 OF (a_menupops[20]) PROMPT "\-"
+DEFINE BAR 8 OF (a_menupops[20]) PROMPT "No Envíados" ;
+	KEY F7, "F7"
+ON SELECTION BAR 1 OF (a_menupops[20]) goapp.form("ka_rxf")
+ON SELECTION BAR 2 OF (a_menupops[20]) goapp.form("ka_rxguias")
+ON SELECTION BAR 3 OF (a_menupops[20]) goapp.form("ka_rfe")
+ON SELECTION BAR 5 OF (a_menupops[20]) goapp.form("ka_rboletas")
+ON SELECTION BAR 6 OF (a_menupops[20]) goapp.form("ka_rbajas")
+ON SELECTION BAR 8 OF (a_menupops[20]) goapp.form("ka_rfe1")
 
 DEFINE POPUP (a_menupops[21]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[21]) PROMPT "Productos"
-DEFINE BAR 2 OF (a_menupops[21]) PROMPT "Clientes"
-DEFINE BAR 3 OF (a_menupops[21]) PROMPT "Proveedores"
-ON SELECTION BAR 1 OF (a_menupops[21]) goapp.form("ka_lcambios","Productos")
-ON SELECTION BAR 2 OF (a_menupops[21]) goapp.form("ka_lcambios","Clientes")
-ON SELECTION BAR 3 OF (a_menupops[21]) goapp.form("ka_lcambios","Proveedores")
+DEFINE BAR 1 OF (a_menupops[21]) PROMPT "Precios"
+DEFINE BAR 2 OF (a_menupops[21]) PROMPT "Caja"
+DEFINE BAR 3 OF (a_menupops[21]) PROMPT "\-"
+DEFINE BAR 4 OF (a_menupops[21]) PROMPT "Kardex"
+DEFINE BAR 5 OF (a_menupops[21]) PROMPT "\-"
+DEFINE BAR 6 OF (a_menupops[21]) PROMPT "Créditos"
+DEFINE BAR 7 OF (a_menupops[21]) PROMPT "Pagos de Créditos"
+DEFINE BAR 8 OF (a_menupops[21]) PROMPT "\-"
+DEFINE BAR 9 OF (a_menupops[21]) PROMPT "Cambios"
+ON SELECTION BAR 1 OF (a_menupops[21]) goapp.form("ka_llprecios")
+ON SELECTION BAR 2 OF (a_menupops[21]) goapp.form("ka_lcaja")
+ON SELECTION BAR 4 OF (a_menupops[21]) goapp.form("ka_lkardex",0)
+ON SELECTION BAR 6 OF (a_menupops[21]) goapp.form("ka_lcreditos")
+ON SELECTION BAR 7 OF (a_menupops[21]) goapp.form("ka_lcreditos1")
+ON BAR 9 OF (a_menupops[21]) ACTIVATE POPUP (a_menupops[22])
 
 DEFINE POPUP (a_menupops[22]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[22]) PROMPT "Configuración del Sistema"
-DEFINE BAR 2 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[22]) PROMPT "Eliminación de Documentos"
-DEFINE BAR 4 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[22]) PROMPT "Copia de Seguridad"
-DEFINE BAR 6 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 7 OF (a_menupops[22]) PROMPT "Asignar Permisos"
-DEFINE BAR 8 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 9 OF (a_menupops[22]) PROMPT "Obtener Stock-Fecha Sistema"
-DEFINE BAR 10 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 11 OF (a_menupops[22]) PROMPT "Cambiar Clave  de Usuario"
-DEFINE BAR 12 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 13 OF (a_menupops[22]) PROMPT "Facturación Electrónica"
-DEFINE BAR 14 OF (a_menupops[22]) PROMPT "\-"
-DEFINE BAR 15 OF (a_menupops[22]) PROMPT "Actualizar App"
-ON SELECTION BAR 1 OF (a_menupops[22]) do form forconfigurar
-ON SELECTION BAR 3 OF (a_menupops[22]) ;
-	DO _6nq0puq9d ;
+DEFINE BAR 1 OF (a_menupops[22]) PROMPT "Productos"
+DEFINE BAR 2 OF (a_menupops[22]) PROMPT "Clientes"
+DEFINE BAR 3 OF (a_menupops[22]) PROMPT "Proveedores"
+ON SELECTION BAR 1 OF (a_menupops[22]) goapp.form("ka_lcambios","Productos")
+ON SELECTION BAR 2 OF (a_menupops[22]) goapp.form("ka_lcambios","Clientes")
+ON SELECTION BAR 3 OF (a_menupops[22]) goapp.form("ka_lcambios","Proveedores")
+
+DEFINE POPUP (a_menupops[23]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[23]) PROMPT "Configuración del Sistema"
+DEFINE BAR 2 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[23]) PROMPT "Eliminación de Documentos"
+DEFINE BAR 4 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[23]) PROMPT "Copia de Seguridad"
+DEFINE BAR 6 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[23]) PROMPT "Obtener Stock-Fecha Sistema"
+DEFINE BAR 8 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 9 OF (a_menupops[23]) PROMPT "Cambiar Clave  de Usuario"
+DEFINE BAR 10 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 11 OF (a_menupops[23]) PROMPT "Facturación Electrónica"
+DEFINE BAR 12 OF (a_menupops[23]) PROMPT "\-"
+DEFINE BAR 13 OF (a_menupops[23]) PROMPT "Actualizar Aplicación"
+ON SELECTION BAR 1 OF (a_menupops[23]) do form forconfigurar
+ON SELECTION BAR 3 OF (a_menupops[23]) ;
+	DO _72f0x4uou ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
-ON SELECTION BAR 5 OF (a_menupops[22]) do form ka_backup
-ON SELECTION BAR 7 OF (a_menupops[22]) goapp.form("ka_daopciones")
-ON SELECTION BAR 9 OF (a_menupops[22]) ;
-	DO _6nq0puq9e ;
+ON SELECTION BAR 5 OF (a_menupops[23]) do form ka_backup
+ON SELECTION BAR 7 OF (a_menupops[23]) ;
+	DO _72f0x4uov ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
-ON SELECTION BAR 11 OF (a_menupops[22]) ;
-	DO _6nq0puq9f ;
+ON SELECTION BAR 9 OF (a_menupops[23]) ;
+	DO _72f0x4uow ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
-ON SELECTION BAR 13 OF (a_menupops[22]) goapp.form("ka_configurar")
-ON SELECTION BAR 15 OF (a_menupops[22]) ;
-	DO _6nq0puq9g ;
+ON SELECTION BAR 11 OF (a_menupops[23]) goapp.form("ka_configurar")
+ON SELECTION BAR 13 OF (a_menupops[23]) ;
+	DO _72f0x4uox ;
 	IN LOCFILE("\XSYSG\MENUS\SISVEN" ,"MPX;MPR|FXP;PRG" ,"WHERE is SISVEN?")
 
 ACTIVATE MENU (m.cMenuName) NOWAIT
@@ -562,7 +576,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ94  ON SELECTION BAR 5 OF POPUP adminuistr      
+*       * _72F0X4UOD  ON SELECTION BAR 5 OF POPUP adminuistr      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -573,7 +587,7 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq94
+PROCEDURE _72f0x4uod
 If goapp.ConectaControlador='S' Then
 	goapp.Form("ar_clientes20")
 Else
@@ -584,18 +598,18 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ95  ON SELECTION BAR 13 OF POPUP movimiento     
+*       * _72F0X4UOE  ON SELECTION BAR 13 OF POPUP movimiento     
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:   97         
+*       * From Menu:  SISVEN.MPR,            Record:  106         
 *       * Called By:  ON SELECTION BAR 13 OF POPUP movimiento     
 *       * Prompt:     Personal                                    
 *       * Snippet:    2                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq95
+PROCEDURE _72f0x4uoe
 Do Form v_verifica With 'A' To verdad
 If verdad Then
 	goapp.Form("ka_oempleados")
@@ -605,7 +619,7 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ96  ON SELECTION BAR 6 OF POPUP ingresosco      
+*       * _72F0X4UOF  ON SELECTION BAR 6 OF POPUP ingresosco      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -616,7 +630,7 @@ Endif
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq96
+PROCEDURE _72f0x4uof
 Do Form ka_lselecciona With 0,"C" To nids
 If nids>0 Then
 	If ldctos.tdoc='07' Or ldctos.tdoc='08' Then
@@ -639,7 +653,7 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ97  ON SELECTION BAR 1 OF POPUP gestionarv      
+*       * _72F0X4UOG  ON SELECTION BAR 1 OF POPUP gestionarv      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -650,7 +664,7 @@ Endif
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq97
+PROCEDURE _72f0x4uog
 Do Case
 Case  goapp.ConectaControlador='S'
 	goapp.Form("ka_ventas20","N")
@@ -665,7 +679,7 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ98  ON SELECTION BAR 2 OF POPUP gestionarv      
+*       * _72F0X4UOH  ON SELECTION BAR 2 OF POPUP gestionarv      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -676,7 +690,7 @@ Endcase
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq98
+PROCEDURE _72f0x4uoh
 Do Case
 Case  goapp.ConectaControlador='S'
 	goapp.Form("ka_ventas20","N")
@@ -690,7 +704,7 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ99  ON SELECTION BAR 3 OF POPUP gestionarv      
+*       * _72F0X4UOI  ON SELECTION BAR 3 OF POPUP gestionarv      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -701,7 +715,7 @@ Endcase
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq99
+PROCEDURE _72f0x4uoi
 Do Case
 Case  goapp.ConectaControlador='S'
 	goapp.Form("ka_ventas20","N")
@@ -720,7 +734,7 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9A  ON SELECTION BAR 5 OF POPUP gestionarv      
+*       * _72F0X4UOJ  ON SELECTION BAR 5 OF POPUP gestionarv      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -731,7 +745,7 @@ Endcase
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9a
+PROCEDURE _72f0x4uoj
 Do Form v_verifica With 'A' To verdad
 If !verdad Then
 	Return
@@ -742,42 +756,86 @@ goapp.Form("ka_rbaja")
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9B  ON SELECTION BAR 13 OF POPUP gestionarv     
+*       * _72F0X4UOK  ON SELECTION BAR 8 OF POPUP gestionarv      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:   72         
-*       * Called By:  ON SELECTION BAR 13 OF POPUP gestionarv     
-*       * Prompt:     Ventas Por Contingencia                     
+*       * From Menu:  SISVEN.MPR,            Record:   64         
+*       * Called By:  ON SELECTION BAR 8 OF POPUP gestionarv      
+*       * Prompt:     Actualizar Ventas                           
 *       * Snippet:    8                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9b
-goapp.Form("ka_ventasant")
-
-
+PROCEDURE _72f0x4uok
+If goApp.Direcciones = 'S' Then
+	Do Form ka_lselecciona With 0, 'V' To nidauto
+	If nidauto > 0 Then
+		goApp.Form("ka_uventasg", nidauto, 'A', ldctos.fech)
+	Endif
+Endif
 
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9C  ON SELECTION BAR 6 OF POPUP caja            
+*       * _72F0X4UOL  ON SELECTION BAR 3 OF POPUP ventasporc      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:  159         
-*       * Called By:  ON SELECTION BAR 6 OF POPUP caja            
-*       * Prompt:     Resumen de Lecturas                         
+*       * From Menu:  SISVEN.MPR,            Record:   78         
+*       * Called By:  ON SELECTION BAR 3 OF POPUP ventasporc      
+*       * Prompt:     Exoneradas                                  
 *       * Snippet:    9                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9c
+PROCEDURE _72f0x4uol
+If fe_gene.nruc="20607979244" Then
+	goapp.Form("ka_ventasant","E")
+Endif
+
+
+
+*       *********************************************************
+*       *                                                         
+*       * _72F0X4UOM  ON SELECTION BAR 1 OF POPUP _6k10mfjwv      
+*       *                                                         
+*       * Procedure Origin:                                       
+*       *                                                         
+*       * From Menu:  SISVEN.MPR,            Record:   97         
+*       * Called By:  ON SELECTION BAR 1 OF POPUP _6k10mfjwv      
+*       * Prompt:     Ajuste de Inventarios                       
+*       * Snippet:    10                                          
+*       *                                                         
+*       *********************************************************
+*
+PROCEDURE _72f0x4uom
+DO FORM v_verifica WITH 'Z' TO verdad
+IF !verdad then
+   RETURN
+ENDIF
+goapp.form("ka_ajusateinve")
+
+
+*       *********************************************************
+*       *                                                         
+*       * _72F0X4UON  ON SELECTION BAR 6 OF POPUP caja            
+*       *                                                         
+*       * Procedure Origin:                                       
+*       *                                                         
+*       * From Menu:  SISVEN.MPR,            Record:  168         
+*       * Called By:  ON SELECTION BAR 6 OF POPUP caja            
+*       * Prompt:     Resumen de Lecturas                         
+*       * Snippet:    11                                          
+*       *                                                         
+*       *********************************************************
+*
+PROCEDURE _72f0x4uon
 If goApp.ConectaControlador = 'S' Or goApp.ConectaControlador = 'Y' Then
 	Do Case
 	Case goApp.ConectaControlador = 'S'
 		goApp.Form("ka_lecturas20")
-	Case goApp.ConectaControlador = 'S'
+	Case goApp.ConectaControlador = 'Y'
 		goApp.Form("ka_lecturas30")
 	Endcase
 Else
@@ -790,18 +848,18 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9D  ON SELECTION BAR 3 OF POPUP utilidades      
+*       * _72F0X4UOU  ON SELECTION BAR 3 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:  264         
+*       * From Menu:  SISVEN.MPR,            Record:  273         
 *       * Called By:  ON SELECTION BAR 3 OF POPUP utilidades      
 *       * Prompt:     Eliminación de Documentos                   
-*       * Snippet:    10                                          
+*       * Snippet:    12                                          
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9d
+PROCEDURE _72f0x4uou
 If _Screen.autorizara='S' Then
 	Do Form v_verifica With "X" To verdad
 Else
@@ -819,18 +877,18 @@ Endif
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9E  ON SELECTION BAR 9 OF POPUP utilidades      
+*       * _72F0X4UOV  ON SELECTION BAR 7 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:  273         
-*       * Called By:  ON SELECTION BAR 9 OF POPUP utilidades      
+*       * From Menu:  SISVEN.MPR,            Record:  279         
+*       * Called By:  ON SELECTION BAR 7 OF POPUP utilidades      
 *       * Prompt:     Obtener Stock-Fecha Sistema                 
-*       * Snippet:    11                                          
+*       * Snippet:    13                                          
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9e
+PROCEDURE _72f0x4uov
 If SQLExec(goapp.bdconn,"call calcularstock()")<1
 	errorbd("No Se puede Conectar con la Base de Datos")
 	Return
@@ -845,18 +903,18 @@ Messagebox("Stock Calculado",64,"SYSVEN")
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9F  ON SELECTION BAR 11 OF POPUP utilidades     
+*       * _72F0X4UOW  ON SELECTION BAR 9 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:  276         
-*       * Called By:  ON SELECTION BAR 11 OF POPUP utilidades     
+*       * From Menu:  SISVEN.MPR,            Record:  282         
+*       * Called By:  ON SELECTION BAR 9 OF POPUP utilidades      
 *       * Prompt:     Cambiar Clave  de Usuario                   
-*       * Snippet:    12                                          
+*       * Snippet:    14                                          
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9f
+PROCEDURE _72f0x4uow
 Do Form ar_cclave With goapp.usuario,goapp.cclave,goapp.nidusua
 
 	
@@ -864,18 +922,18 @@ Do Form ar_cclave With goapp.usuario,goapp.cclave,goapp.nidusua
 
 *       *********************************************************
 *       *                                                         
-*       * _6NQ0PUQ9G  ON SELECTION BAR 15 OF POPUP utilidades     
+*       * _72F0X4UOX  ON SELECTION BAR 13 OF POPUP utilidades     
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  SISVEN.MPR,            Record:  282         
-*       * Called By:  ON SELECTION BAR 15 OF POPUP utilidades     
-*       * Prompt:     Actualizar App                              
-*       * Snippet:    13                                          
+*       * From Menu:  SISVEN.MPR,            Record:  288         
+*       * Called By:  ON SELECTION BAR 13 OF POPUP utilidades     
+*       * Prompt:     Actualizar Aplicación                       
+*       * Snippet:    15                                          
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6nq0puq9g
+PROCEDURE _72f0x4uox
 *DO d:\librerias\crear_exe WITH  goapp.ejecutable,goapp.ruta,goapp.carpetaftp.
+_SCREEN.oFtp.descargarApp()
 
-_SCREEN.oFtp.CheckUpdates()

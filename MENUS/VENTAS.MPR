@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 06/14/23             VENTAS.MPR               07:54:09  
+*       * 06/01/24             VENTAS.MPR               13:23:04  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2023 Etch Sys                             
+*       * Copyright (C) 2024 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -104,19 +104,20 @@ ENDIF
 IF m.cTypeParm2 = "C" AND !EMPTY(m.getMenuName)
 	m.cMenuName = m.getMenuName
 ENDIF
-DIMENSION a_menupops[7]
+DIMENSION a_menupops[8]
 IF TYPE("m.lUniquePopups")="L" AND m.lUniquePopups
 	FOR nTotPops = 1 TO ALEN(a_menupops)
 		a_menupops[m.nTotPops]= SYS(2015)
 	ENDFOR
 ELSE
 	a_menupops[1]="movimiento"
-	a_menupops[2]="informes"
-	a_menupops[3]="vendedores"
-	a_menupops[4]="ventas"
-	a_menupops[5]="transaccio"
-	a_menupops[6]="_5560jvck2"
-	a_menupops[7]="utilidades"
+	a_menupops[2]="guiasderem"
+	a_menupops[3]="informes"
+	a_menupops[4]="vendedores"
+	a_menupops[5]="ventas"
+	a_menupops[6]="transaccio"
+	a_menupops[7]="_5560jvck2"
+	a_menupops[8]="utilidades"
 ENDIF
 
 
@@ -129,90 +130,110 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _6n20gxs2r OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6wx0sor41 OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _6n20gxs2s OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _6wx0sor42 OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _6n20gxs2t OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
+DEFINE PAD _6wx0sor43 OF (m.cMenuName) PROMPT "Informes" COLOR SCHEME 3 ;
 	KEY ALT+I, ""
-DEFINE PAD _6n20gxs2u OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _6wx0sor44 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _6n20gxs2s OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _6n20gxs2t OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _6n20gxs2u OF (m.cMenuName) ACTIVATE POPUP (a_menupops[7])
+ON PAD _6wx0sor42 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6wx0sor43 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _6wx0sor44 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[8])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Ventas NO Exoneradas ..."
-DEFINE BAR 2 OF (a_menupops[1]) PROMPT "Ventas Exoneradas"
-DEFINE BAR 3 OF (a_menupops[1]) PROMPT "Ventas Con Turnos NO Exoneradas"
-DEFINE BAR 4 OF (a_menupops[1]) PROMPT "Otras Ventas"
-DEFINE BAR 5 OF (a_menupops[1]) PROMPT "\-"
-DEFINE BAR 6 OF (a_menupops[1]) PROMPT "Notas de Crédito"
+DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Compras"
+DEFINE BAR 2 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[1]) PROMPT "Ventas NO Exone\radas ..."
+DEFINE BAR 4 OF (a_menupops[1]) PROMPT "Ventas Exoneradas"
+DEFINE BAR 5 OF (a_menupops[1]) PROMPT "Ventas Con Turnos NO Exoneradas"
+DEFINE BAR 6 OF (a_menupops[1]) PROMPT "Otras Ventas"
 DEFINE BAR 7 OF (a_menupops[1]) PROMPT "\-"
-DEFINE BAR 8 OF (a_menupops[1]) PROMPT "Caja"
-ON SELECTION BAR 1 OF (a_menupops[1]) ;
-	DO _6n20gxs2v ;
-	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
-ON SELECTION BAR 2 OF (a_menupops[1]) ;
-	DO _6n20gxs2w ;
-	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
+DEFINE BAR 8 OF (a_menupops[1]) PROMPT "Guias de Remisión"
+DEFINE BAR 9 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 10 OF (a_menupops[1]) PROMPT "Notas de Crédito"
+DEFINE BAR 11 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 12 OF (a_menupops[1]) PROMPT "Caja"
+ON SELECTION BAR 1 OF (a_menupops[1]) goapp.form("ka_compras","","","")
 ON SELECTION BAR 3 OF (a_menupops[1]) ;
-	DO _6n20gxs2x ;
+	DO _6wx0sor45 ;
 	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
-ON SELECTION BAR 4 OF (a_menupops[1]) goapp.form("co_oventas1")
-ON SELECTION BAR 6 OF (a_menupops[1]) goapp.form("ka_notasventas")
-ON SELECTION BAR 8 OF (a_menupops[1]) goapp.form("ka_caja")
+ON SELECTION BAR 4 OF (a_menupops[1]) ;
+	DO _6wx0sor46 ;
+	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
+ON SELECTION BAR 5 OF (a_menupops[1]) ;
+	DO _6wx0sor47 ;
+	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
+ON SELECTION BAR 6 OF (a_menupops[1]) goapp.form("co_oventas1")
+ON BAR 8 OF (a_menupops[1]) ACTIVATE POPUP (a_menupops[2])
+ON SELECTION BAR 10 OF (a_menupops[1]) goapp.form("ka_notasventas")
+ON SELECTION BAR 12 OF (a_menupops[1]) goapp.form("ka_caja")
 
 DEFINE POPUP (a_menupops[2]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[2]) PROMPT "Vendedores"
+DEFINE BAR 1 OF (a_menupops[2]) PROMPT "Por Compras"
 DEFINE BAR 2 OF (a_menupops[2]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[2]) PROMPT "Ventas"
-DEFINE BAR 4 OF (a_menupops[2]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[2]) PROMPT "Transacciones"
-DEFINE BAR 6 OF (a_menupops[2]) PROMPT "\-"
-DEFINE BAR 7 OF (a_menupops[2]) PROMPT "Electrónicos"
-ON BAR 1 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[3])
-ON BAR 3 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[4])
-ON BAR 5 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[5])
-ON BAR 7 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[6])
+DEFINE BAR 3 OF (a_menupops[2]) PROMPT "Por Ventas Directas"
+ON SELECTION BAR 1 OF (a_menupops[2]) goapp.form("ka_guiasrcompras")
+ON SELECTION BAR 3 OF (a_menupops[2]) goapp.form("ka_guiasrventas")
 
 DEFINE POPUP (a_menupops[3]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[3]) PROMPT "Ventas Por Vendedor"
-ON SELECTION BAR 1 OF (a_menupops[3]) goapop.form("ka_tvendedor")
+DEFINE BAR 1 OF (a_menupops[3]) PROMPT "Vendedores"
+DEFINE BAR 2 OF (a_menupops[3]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[3]) PROMPT "Ventas"
+DEFINE BAR 4 OF (a_menupops[3]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[3]) PROMPT "Transacciones"
+DEFINE BAR 6 OF (a_menupops[3]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[3]) PROMPT "Electrónicos"
+ON BAR 1 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[4])
+ON BAR 3 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[5])
+ON BAR 5 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[6])
+ON BAR 7 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[7])
 
 DEFINE POPUP (a_menupops[4]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[4]) PROMPT "Ventas Por Cliente"
-DEFINE BAR 2 OF (a_menupops[4]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[4]) PROMPT "Detalle de Ventas"
-ON SELECTION BAR 1 OF (a_menupops[4]) goapp.form("ka_rreventas","V","","")
-ON SELECTION BAR 3 OF (a_menupops[4]) goapp.form("ka_rdvtas1")
+DEFINE BAR 1 OF (a_menupops[4]) PROMPT "Ventas Por Vendedor"
+ON SELECTION BAR 1 OF (a_menupops[4]) goapop.form("ka_tvendedor")
 
 DEFINE POPUP (a_menupops[5]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[5]) PROMPT "Transacciones"
-ON SELECTION BAR 1 OF (a_menupops[5]) goapp.form("ka_rmvtos")
+DEFINE BAR 1 OF (a_menupops[5]) PROMPT "Ventas Por Cliente"
+DEFINE BAR 2 OF (a_menupops[5]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[5]) PROMPT "Detalle de Ventas"
+DEFINE BAR 4 OF (a_menupops[5]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[5]) PROMPT "Ventas Al Crédito"
+DEFINE BAR 6 OF (a_menupops[5]) PROMPT "Ventas Con Tarjeta"
+ON SELECTION BAR 1 OF (a_menupops[5]) goapp.form("ka_rreventas","V","","")
+ON SELECTION BAR 3 OF (a_menupops[5]) goapp.form("ka_rdvtas1")
+ON SELECTION BAR 5 OF (a_menupops[5]) goapp.form("ka_rvtascredito")
+ON SELECTION BAR 6 OF (a_menupops[5]) goapp.form("ka_rtarjetas")
 
 DEFINE POPUP (a_menupops[6]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[6]) PROMPT "Reimprimir y Envío por Correo"
-DEFINE BAR 2 OF (a_menupops[6]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[6]) PROMPT "Respuestas Envíos" ;
-	KEY F8, "F8"
-DEFINE BAR 4 OF (a_menupops[6]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[6]) PROMPT "No Enviados" ;
-	KEY F7, "F7"
-ON SELECTION BAR 1 OF (a_menupops[6]) goapp.form("ka_rxf")
-ON SELECTION BAR 3 OF (a_menupops[6]) goapp.form("ka_rfe")
-ON SELECTION BAR 5 OF (a_menupops[6]) goapp.form("ka_rfe1")
+DEFINE BAR 1 OF (a_menupops[6]) PROMPT "Transacciones"
+ON SELECTION BAR 1 OF (a_menupops[6]) goapp.form("ka_rmvtos")
 
 DEFINE POPUP (a_menupops[7]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
-DEFINE BAR 1 OF (a_menupops[7]) PROMPT "Configuración"
-DEFINE BAR 2 OF (a_menupops[7]) PROMPT "\-"
-DEFINE BAR 3 OF (a_menupops[7]) PROMPT "Cambiar Clave"
-DEFINE BAR 4 OF (a_menupops[7]) PROMPT "\-"
-DEFINE BAR 5 OF (a_menupops[7]) PROMPT "Obtener Stock-Fecha Sistema"
-ON SELECTION BAR 1 OF (a_menupops[7]) do form forconfigurar
-ON SELECTION BAR 3 OF (a_menupops[7]) do form  ar_cclave with goapp.usuario,'',goapp.nidusua
-ON SELECTION BAR 5 OF (a_menupops[7]) ;
-	DO _6n20gxs2y ;
+DEFINE BAR 1 OF (a_menupops[7]) PROMPT "Reimprimir y Envío por Correo"
+DEFINE BAR 2 OF (a_menupops[7]) PROMPT "Reimprimir Guias"
+DEFINE BAR 3 OF (a_menupops[7]) PROMPT "\-"
+DEFINE BAR 4 OF (a_menupops[7]) PROMPT "Respuestas Envíos" ;
+	KEY F8, "F8"
+DEFINE BAR 5 OF (a_menupops[7]) PROMPT "\-"
+DEFINE BAR 6 OF (a_menupops[7]) PROMPT "No Enviados" ;
+	KEY F7, "F7"
+ON SELECTION BAR 1 OF (a_menupops[7]) goapp.form("ka_rxf")
+ON SELECTION BAR 2 OF (a_menupops[7]) goapp.form("ka_rxguias")
+ON SELECTION BAR 4 OF (a_menupops[7]) goapp.form("ka_rfe")
+ON SELECTION BAR 6 OF (a_menupops[7]) goapp.form("ka_rfe1")
+
+DEFINE POPUP (a_menupops[8]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[8]) PROMPT "Configuración"
+DEFINE BAR 2 OF (a_menupops[8]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[8]) PROMPT "Cambiar Clave"
+DEFINE BAR 4 OF (a_menupops[8]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[8]) PROMPT "Obtener Stock-Fecha Sistema"
+ON SELECTION BAR 1 OF (a_menupops[8]) do form forconfigurar
+ON SELECTION BAR 3 OF (a_menupops[8]) do form  ar_cclave with goapp.usuario,'',goapp.nidusua
+ON SELECTION BAR 5 OF (a_menupops[8]) ;
+	DO _6wx0sor48 ;
 	IN LOCFILE("\XSYSG\MENUS\VENTAS" ,"MPX;MPR|FXP;PRG" ,"WHERE is VENTAS?")
 
 ACTIVATE MENU (m.cMenuName) NOWAIT
@@ -225,18 +246,18 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _6N20GXS2V  ON SELECTION BAR 1 OF POPUP movimiento      
+*       * _6WX0SOR45  ON SELECTION BAR 3 OF POPUP movimiento      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  VENTAS.MPR,            Record:    7         
-*       * Called By:  ON SELECTION BAR 1 OF POPUP movimiento      
+*       * From Menu:  VENTAS.MPR,            Record:   10         
+*       * Called By:  ON SELECTION BAR 3 OF POPUP movimiento      
 *       * Prompt:     Ventas NO Exoneradas ...                    
 *       * Snippet:    1                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6n20gxs2v
+PROCEDURE _6wx0sor45
 Do Case
 Case  goapp.ConectaControlador='S'
 	goapp.Form("ka_ventas20","N")
@@ -251,18 +272,18 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6N20GXS2W  ON SELECTION BAR 2 OF POPUP movimiento      
+*       * _6WX0SOR46  ON SELECTION BAR 4 OF POPUP movimiento      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  VENTAS.MPR,            Record:    8         
-*       * Called By:  ON SELECTION BAR 2 OF POPUP movimiento      
+*       * From Menu:  VENTAS.MPR,            Record:   11         
+*       * Called By:  ON SELECTION BAR 4 OF POPUP movimiento      
 *       * Prompt:     Ventas Exoneradas                           
 *       * Snippet:    2                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6n20gxs2w
+PROCEDURE _6wx0sor46
 Do Case
 Case  goapp.ConectaControlador='S'
 	goapp.Form("ka_ventas20","N")
@@ -277,18 +298,18 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6N20GXS2X  ON SELECTION BAR 3 OF POPUP movimiento      
+*       * _6WX0SOR47  ON SELECTION BAR 5 OF POPUP movimiento      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  VENTAS.MPR,            Record:    9         
-*       * Called By:  ON SELECTION BAR 3 OF POPUP movimiento      
+*       * From Menu:  VENTAS.MPR,            Record:   12         
+*       * Called By:  ON SELECTION BAR 5 OF POPUP movimiento      
 *       * Prompt:     Ventas Con Turnos NO Exoneradas             
 *       * Snippet:    3                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6n20gxs2x
+PROCEDURE _6wx0sor47
 Do Case
 Case  goapp.ConectaControlador='S'
 *	goapp.Form("ka_ventas20","N")
@@ -302,18 +323,18 @@ Endcase
 
 *       *********************************************************
 *       *                                                         
-*       * _6N20GXS2Y  ON SELECTION BAR 5 OF POPUP utilidades      
+*       * _6WX0SOR48  ON SELECTION BAR 5 OF POPUP utilidades      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
-*       * From Menu:  VENTAS.MPR,            Record:   54         
+*       * From Menu:  VENTAS.MPR,            Record:   70         
 *       * Called By:  ON SELECTION BAR 5 OF POPUP utilidades      
 *       * Prompt:     Obtener Stock-Fecha Sistema                 
 *       * Snippet:    4                                           
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _6n20gxs2y
+PROCEDURE _6wx0sor48
 IF SQLEXEC(goapp.bdconn,"call calcularstock()")<1
    errorbd("No Se puede Conectar con la Base de Datos")
    RETURN

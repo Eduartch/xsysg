@@ -1,0 +1,17 @@
+[
+ {
+        "tipoconexion": "R",
+    	"conectacontrolador":"Y",
+        "Diasenviocpe": "2",
+        "nroturnos": "1",
+        "Grabarxmlbd": "S",
+        "fondo":"FondoC.jpg",
+        "empresavisible":"N",
+        "alias":"grbrisas",
+        "idclientegenerico":"2",
+        "ht":"1",
+        "logotipo":"logopetrobrisas.png",
+        "Rutacertificado": "grifobrisas",
+        "Url": "https://compania-sysven.com/consulta"
+    }
+]

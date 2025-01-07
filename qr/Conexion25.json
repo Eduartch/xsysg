@@ -1,0 +1,17 @@
+[
+{
+"tipoconexion":"R",
+"Diasenviocpe":"2",
+"conectacontrolador":"Y",
+"ImprimirFacturaNormal":"S",
+"logotipo":"Logosipanr.png",
+"Grabarxmlbd":"S",
+"fondo":"fondoceleste.jpg",
+"rutacertificado":"grifomotupe",
+"Url":"https://compania-sysven.com/consulta",
+"Validarcredito":"N",
+"EmisorGuiasRemisionElectronica":"S",
+"idclientegenerico":"405",
+"enviocorreoapi":"S"
+}
+]

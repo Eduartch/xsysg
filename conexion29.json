@@ -1,0 +1,12 @@
+[
+ {
+        "tipoconexion": "R",
+        "Controlcontometros": "S",
+        "Diasenviocpe": "2",
+        "nroturnos": "4",
+        "Grabarxmlbd": "S",
+        "logotipo":"logomp.png",
+        "Rutacertificado": "grupomp",
+        "Url": "https://compania-sysven.com/consulta"
+    }
+]

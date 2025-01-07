@@ -1,0 +1,1 @@
+d:\xsysg\firmarxml.exe d:\xsysg\firmaxml\20606507853-RC-20240827-7.xml d:\xsysg\certificados\grifo4aolmos\certificadopfx.pfx  AVR12345

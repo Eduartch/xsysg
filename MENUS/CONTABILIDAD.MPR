@@ -1,12 +1,12 @@
 *       *********************************************************
 *       *                                                         
-*       * 10/05/21          CONTABILIDAD.MPR            23:31:21  
+*       * 07/30/23          CONTABILIDAD.MPR            11:16:45  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
 *       * Eduar Torres CHupillón                                  
 *       *                                                         
-*       * Copyright (C) 2021 Etch Sys                             
+*       * Copyright (C) 2023 Etch Sys                             
 *       * Av.Bolivar 1623                                         
 *       * Chiclayo, Perú  001                                       
 *       * Perú                                              
@@ -133,18 +133,18 @@ ENDIF
 
 DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 
-DEFINE PAD _65t1ef0yk OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
+DEFINE PAD _6oc0o6b15 OF (m.cMenuName) PROMPT "Administración" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-DEFINE PAD _65t1ef0yl OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
+DEFINE PAD _6oc0o6b16 OF (m.cMenuName) PROMPT "Movimientos" COLOR SCHEME 3 ;
 	KEY ALT+M, ""
-DEFINE PAD _65t1ef0ym OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
+DEFINE PAD _6oc0o6b17 OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-DEFINE PAD _65t1ef0yn OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
+DEFINE PAD _6oc0o6b18 OF (m.cMenuName) PROMPT "Utilidades" COLOR SCHEME 3 ;
 	KEY ALT+U, ""
-ON PAD _65t1ef0yk OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _65t1ef0yl OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
-ON PAD _65t1ef0ym OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
-ON PAD _65t1ef0yn OF (m.cMenuName) ACTIVATE POPUP (a_menupops[11])
+ON PAD _6oc0o6b15 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _6oc0o6b16 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _6oc0o6b17 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
+ON PAD _6oc0o6b18 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[11])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "\<Clientes"
@@ -170,7 +170,7 @@ ON SELECTION BAR 8 OF (a_menupops[1]) goapp.form("ar_monedas")
 ON SELECTION BAR 10 OF (a_menupops[1]) goapp.form("ar_bancos")
 ON SELECTION BAR 11 OF (a_menupops[1]) goapp.form("ar_ctasbancos")
 ON SELECTION BAR 13 OF (a_menupops[1]) ;
-	DO _65t1ef0yo ;
+	DO _6oc0o6b19 ;
 	IN LOCFILE("\XSYSG\MENUS\CONTABILIDAD" ,"MPX;MPR|FXP;PRG" ,"WHERE is CONTABILIDAD?")
 
 DEFINE POPUP (a_menupops[2]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -319,7 +319,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _65T1EF0YO  ON SELECTION BAR 13 OF POPUP adminuistr     
+*       * _6OC0O6B19  ON SELECTION BAR 13 OF POPUP adminuistr     
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -330,6 +330,6 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _65t1ef0yo
+PROCEDURE _6oc0o6b19
 ON SHUTDOWN CLEAR EVENTS
 QUIT

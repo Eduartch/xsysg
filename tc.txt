@@ -1,140 +1,71 @@
-
-
-
-
-29
-
-30
-
-1
-
-Compra 3.603
-
-Venta 3.610
-
-2
-
-Compra 3.602
-
-Venta 3.606
-
-3
-
-Compra 3.602
-
-Venta 3.607
-
-4
-
-Compra 3.595
-
-Venta 3.599
-
-5
-
-Compra 3.588
-
-Venta 3.596
-
-
-6
-
-7
-
-8
-
-Compra 3.596
-
-Venta 3.603
-
-9
-
-10
-
-Compra 3.598
-
-Venta 3.606
-
-11
-
-Compra 3.598
-
-Venta 3.603
-
-12
-
-Compra 3.593
-
-Venta 3.602
-
-
-13
-
-14
-
-15
-
-Compra 3.582
-
-Venta 3.591
-
-16
-
-Compra 3.588
-
-Venta 3.592
-
-17
-
-Compra 3.584
-
-Venta 3.590
-
-18
-
-Compra 3.581
-
-Venta 3.587
-
-19
-
-Compra 3.593
-
-Venta 3.597
-
-
-20
-
-21
-
-22
-
-Compra 3.603
-
-Venta 3.608
-
-23
-
-24
-
-25
-
-26
-
-
-27
-
-28
-
-29
-
-30
-
-31
-
-1
-
-2
-
+PARA PAGAR
+
+	Function listarparacancelar(Ccursor)
+	If !Pemstatus(goApp, 'cdatos', 5) Then
+		AddProperty(goApp, 'cdatos', '')
+	Endif
+	Set Textmerge On
+	Set Textmerge To Memvar lC Noshow Textmerge
+	\Select a.Ndoc,a.fech,a.fevto,a.saldo,a.moneda,a.Importec,tdoc,a.idpr,
+	\situa,idauto,ncontrol,Tipo,banco,docd,tdoc,codt,dola,idrd,x.razo,rdeu_idct,nrou From vpdtespago As a
+	\INNER Join fe_prov As x On x.idprov=a.idpr
+	If goApp.cdatos = 'S' Then
+	  \Where a.codt=<<goApp.Tienda>>
+	Endif
+	\Order By fevto
+	Set Textmerge Off
+	Set Textmerge To
+	If This.EJECutaconsulta(lC, Ccursor) < 1
+		Return 0
+	Endif
+	Return 1
+	Endfunc
+
+
+PARA COBRAR
+
+If !Pemstatus(goApp, 'cdatos', 5)
+		AddProperty(goApp, 'cdatos', '')
+	Endif
+	If !Pemstatus(goApp, 'clienteconproyectos', 5)
+		AddProperty(goApp, 'clienteconproyectos', '')
+	Endif
+	If This.Idsesion > 0 Then
+		Set DataSession To This.Idsesion
+	ENDIF
+	Set Textmerge On
+	Set Textmerge To Memvar lC Noshow Textmerge
+	\Select ifnull(c.ndoc,e.ndoc) As ndoc,e.fech,xx.fevto,xx.saldo,
+	\b.rcre_impc,'C' As situa,b.rcre_idau,xx.Ncontrol,e.tipo,rcre_idav,e.banco,ifnull(c.ndoc,' ') As docd,ifnull(c.tdoc,' ' ) As tdoc,e.nrou,
+	\e.mone,0 As dscto,rcre_codt As codt,xxx.razo,b.rcre_impc As importec,b.rcre_idau As Idauto,e.mone As moneda,b.rcre_idrc As idrc,xxx.idclie,
+	\ d.idven,d.nomv,xx.rcre_idrc,
+	If goApp.Clienteconproyectos = 'S' Then
+	 \ifnull(proy_nomb,'') As proyecto
+	Else
+	 \ '' As proyecto
+	Endif
+	 \ From (Select Ncontrol,Round(Sum(a.Impo-a.acta),2) As saldo,Max(fevto) As fevto,rcre_idrc From  fe_cred As a
+	\           INNER Join fe_rcred As b On(b.rcre_idrc=a.cred_idrc)
+	\		    Where a.Acti='A' And b.rcre_Acti='A'
+	If goApp.Cdatos = 'S' Then
+	   \And b.rcre_codt=<<goApp.Tienda>>
+	Endif
+	\Group By Ncontrol,rcre_idrc HAVING saldo<>0) As xx
+	\   INNER Join fe_rcred As b On b.rcre_idrc=xx.rcre_idrc
+	\   INNER Join fe_cred As e On e.idcred=xx.Ncontrol
+	\   INNER Join fe_vend As d On(d.idven=b.rcre_codv)
+	\   INNER Join fe_clie As xxx On xxx.idclie=b.rcre_idcl
+	\   left  Join (Select tdoc,ndoc,Idauto From fe_rcom Where idcliente>0 And Acti='A') As c On(c.Idauto=b.rcre_idau)
+	If goApp.Clienteconproyectos = 'S' Then
+	   \  Left Join fe_proyectos As p On p.proy_idpr=b.rcre_idsu
+	Endif
+	\   Order By fevto
+	Set Textmerge Off
+	Set Textmerge To
+	If This.EjecutaConsulta(lC, Ccursor) < 1 Then
+		Return 0
+	Endif
+	Return 1
+	Endfunc
 
 

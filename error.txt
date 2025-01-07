@@ -1,1 +1,0 @@
-CALL proregistraptos	(377340,405,3,0,'2023-2-11')

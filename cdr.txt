@@ -1,0 +1,1 @@
+		         update fe_rcom set rcom_fecd=curdate(),rcom_cdr=?cdr,rcom_mens=?crpta where idauto=315173

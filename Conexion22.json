@@ -1,0 +1,13 @@
+ [{
+		"tipoconexion": "R",
+		"Controlcontometros": "N",
+		"Diasenviocpe": "2",
+		"Seriealterna": "1",
+		"Grabarxmlbd": "S",
+		"Impresoranormal": "Microsoft XPS Document Writer",
+		"logotipo": "logogrifopucala.png",
+		"ose": "nubefact",
+                "rutacertificado":"lin",
+		"nroturnos": "3",
+                "EmisorGuiasRemisionElectronica":"S"
+}]

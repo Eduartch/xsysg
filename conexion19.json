@@ -1,0 +1,12 @@
+[
+  {
+		"tipoconexion": "R",
+		"Controlcontometros": "N",
+		"Diasenviocpe": "2",
+		"logotipo": "logosipan.png",
+		"Url": "https://compania-sysven.com/consulta",
+		"Grabarxmlbd": "S",
+                "idclientegenerico":"405",
+                "rutacertificado":"via"  
+	}
+]
